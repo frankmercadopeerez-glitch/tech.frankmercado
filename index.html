@@ -66,35 +66,41 @@
     <link rel="icon" type="image/png" href="images/2.png" />
     <link rel="apple-touch-icon" href="images/4.png" />
 
-    <!-- Preconnect para performance -->
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
-
-    <!-- Preload recursos críticos -->
-    <link rel="preload" as="image" href="images/4.png" />
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
-    />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dark: {
+                DEFAULT: "#0a0a0f",
+                50: "#111118",
+                100: "#1a1a24",
+                200: "#24243a",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+              display: ["Space Grotesk", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
 
-    <!-- Fuentes Premium con display swap -->
+    <!-- Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
-      media="print"
-      onload="this.media = 'all'"
     />
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
-        rel="stylesheet"
-      />
-    </noscript>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css" />
 
     <!-- Schema.org Local Business -->
     <script type="application/ld+json">
@@ -105,7 +111,6 @@
         "description": "Agencia de diseño web y desarrollo profesional en Cartagena, Colombia",
         "url": "https://tech.frankmercado.com",
         "logo": "https://tech.frankmercado.com/images/FMT%20WEB%20LOGO%20.png",
-        "image": "https://tech.frankmercado.com/images/FMT%20WEB%20LOGO%20.png",
         "telephone": "+573044301112",
         "email": "hola@frankmercado.com",
         "address": {
@@ -121,805 +126,144 @@
         },
         "priceRange": "$$",
         "openingHours": "Mo-Fr 08:00-18:00",
-        "areaServed": {
-          "@type": "City",
-          "name": "Cartagena de Indias"
-        },
+        "areaServed": { "@type": "City", "name": "Cartagena de Indias" },
         "sameAs": [
           "https://www.instagram.com/frankmercadoweb",
           "https://www.facebook.com/frankmercadoweb"
         ]
       }
     </script>
-
-    <style>
-      :root {
-        --primary: #6366f1;
-        --primary-dark: #4f46e5;
-        --secondary: #06b6d4;
-        --accent: #f59e0b;
-        --dark: #0f172a;
-        --darker: #020617;
-      }
-
-      * {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-      body {
-        font-family: "Inter", sans-serif;
-      }
-      h1,
-      h2,
-      h3,
-      .font-display {
-        font-family: "Space Grotesk", sans-serif;
-      }
-
-      /* Preloader */
-      #preloader {
-        transition:
-          opacity 0.5s ease,
-          visibility 0.5s ease;
-      }
-      #preloader.fade-out {
-        opacity: 0;
-        visibility: hidden;
-      }
-
-      /* Gradientes Premium */
-      .gradient-hero {
-        background: linear-gradient(
-          135deg,
-          #0f172a 0%,
-          #1e1b4b 50%,
-          #0f172a 100%
-        );
-      }
-      .gradient-text {
-        background: linear-gradient(
-          135deg,
-          #6366f1 0%,
-          #06b6d4 50%,
-          #f59e0b 100%
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-      .gradient-border {
-        background: linear-gradient(135deg, #6366f1, #06b6d4, #f59e0b);
-      }
-
-      /* Glow Effects mejorados */
-      .glow-primary {
-        box-shadow:
-          0 0 40px rgba(99, 102, 241, 0.3),
-          0 0 80px rgba(99, 102, 241, 0.1);
-        transition: box-shadow 0.3s ease;
-      }
-      .glow-primary:hover {
-        box-shadow:
-          0 0 60px rgba(99, 102, 241, 0.5),
-          0 0 100px rgba(99, 102, 241, 0.2);
-      }
-      .glow-secondary {
-        box-shadow:
-          0 0 40px rgba(6, 182, 212, 0.3),
-          0 0 80px rgba(6, 182, 212, 0.1);
-        transition: box-shadow 0.3s ease;
-      }
-      .glow-secondary:hover {
-        box-shadow:
-          0 0 60px rgba(6, 182, 212, 0.5),
-          0 0 100px rgba(6, 182, 212, 0.2);
-      }
-
-      /* Neon glow text */
-      .text-glow {
-        text-shadow:
-          0 0 10px currentColor,
-          0 0 20px currentColor,
-          0 0 40px currentColor;
-      }
-
-      /* Animated Background Grid */
-      .bg-grid {
-        background-image:
-          linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
-        background-size: 50px 50px;
-      }
-
-      /* Floating Animation */
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0px) rotate(0deg);
-        }
-        50% {
-          transform: translateY(-20px) rotate(2deg);
-        }
-      }
-      .float {
-        animation: float 6s ease-in-out infinite;
-      }
-      .float-delay {
-        animation: float 6s ease-in-out infinite;
-        animation-delay: -3s;
-      }
-
-      /* Pulse Glow */
-      @keyframes pulse-glow {
-        0%,
-        100% {
-          box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
-        }
-        50% {
-          box-shadow: 0 0 40px rgba(34, 197, 94, 0.8);
-        }
-      }
-      .pulse-glow {
-        animation: pulse-glow 2s ease-in-out infinite;
-      }
-
-      /* Slide Up Animation */
-      @keyframes slideUp {
-        from {
-          opacity: 0;
-          transform: translateY(40px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .animate-slide-up {
-        opacity: 0;
-        animation: slideUp 0.8s ease forwards;
-      }
-      .animation-delay-200 {
-        animation-delay: 0.2s;
-      }
-      .animation-delay-400 {
-        animation-delay: 0.4s;
-      }
-      .animation-delay-600 {
-        animation-delay: 0.6s;
-      }
-
-      /* Scroll Animations - Optimizado */
-      .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition:
-          opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-          transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        will-change: opacity, transform;
-      }
-      .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .reveal-left {
-        opacity: 0;
-        transform: translateX(-50px);
-        transition:
-          opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-          transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      .reveal-left.active {
-        opacity: 1;
-        transform: translateX(0);
-      }
-      .reveal-right {
-        opacity: 0;
-        transform: translateX(50px);
-        transition:
-          opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-          transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      .reveal-right.active {
-        opacity: 1;
-        transform: translateX(0);
-      }
-      .reveal-scale {
-        opacity: 0;
-        transform: scale(0.9);
-        transition:
-          opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-          transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      .reveal-scale.active {
-        opacity: 1;
-        transform: scale(1);
-      }
-      /* Stagger delays */
-      .stagger-1 {
-        transition-delay: 0.1s;
-      }
-      .stagger-2 {
-        transition-delay: 0.2s;
-      }
-      .stagger-3 {
-        transition-delay: 0.3s;
-      }
-      .stagger-4 {
-        transition-delay: 0.4s;
-      }
-      .stagger-5 {
-        transition-delay: 0.5s;
-      }
-      .stagger-6 {
-        transition-delay: 0.6s;
-      }
-
-      /* Card Hover Effects - Mejorados */
-      .card-hover {
-        transition:
-          transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-          box-shadow 0.4s ease,
-          border-color 0.3s ease;
-        will-change: transform;
-      }
-      .card-hover:hover {
-        transform: translateY(-12px) scale(1.02);
-        box-shadow:
-          0 30px 60px -15px rgba(99, 102, 241, 0.25),
-          0 0 40px -10px rgba(6, 182, 212, 0.2);
-        border-color: rgba(99, 102, 241, 0.5);
-      }
-
-      /* Card 3D Tilt Effect */
-      .card-3d {
-        transform-style: preserve-3d;
-        perspective: 1000px;
-        transition: transform 0.3s ease;
-      }
-      .card-3d:hover {
-        transform: rotateX(5deg) rotateY(5deg) translateZ(10px);
-      }
-
-      /* Glow Hover Effect */
-      .glow-hover {
-        position: relative;
-        overflow: hidden;
-      }
-      .glow-hover::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(
-          circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-          rgba(99, 102, 241, 0.15) 0%,
-          transparent 60%
-        );
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        pointer-events: none;
-      }
-      .glow-hover:hover::after {
-        opacity: 1;
-      }
-
-      /* Image Parallax */
-      .parallax-container {
-        overflow: hidden;
-      }
-      .parallax-img {
-        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      .parallax-container:hover .parallax-img {
-        transform: scale(1.1);
-      }
-
-      /* Magnetic Button Effect */
-      .magnetic-btn {
-        position: relative;
-        overflow: hidden;
-        transition: all 0.3s ease;
-      }
-      .magnetic-btn::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        transition:
-          width 0.6s ease,
-          height 0.6s ease;
-      }
-      .magnetic-btn:hover::before {
-        width: 300px;
-        height: 300px;
-      }
-
-      /* Mobile Menu */
-      .mobile-menu {
-        transform: translateX(100%);
-        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      .mobile-menu.active {
-        transform: translateX(0);
-      }
-
-      /* Scrollbar Custom */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #0f172a;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #6366f1;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #4f46e5;
-      }
-
-      /* No Scrollbar for sliders */
-      .no-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-
-      /* Blob Animation */
-      @keyframes blob {
-        0%,
-        100% {
-          border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-        }
-        50% {
-          border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
-        }
-      }
-      .blob {
-        animation: blob 8s ease-in-out infinite;
-        will-change: border-radius;
-      }
-
-      /* Animación de texto con gradiente */
-      @keyframes gradient-shift {
-        0%,
-        100% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-      }
-      .gradient-text-animated {
-        background: linear-gradient(135deg, #6366f1, #06b6d4, #f59e0b, #6366f1);
-        background-size: 300% 300%;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        animation: gradient-shift 4s ease infinite;
-      }
-
-      /* Shimmer/Shine Effect */
-      @keyframes shimmer {
-        0% {
-          background-position: -200% 0;
-        }
-        100% {
-          background-position: 200% 0;
-        }
-      }
-      .shimmer {
-        position: relative;
-        overflow: hidden;
-      }
-      .shimmer::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.1),
-          transparent
-        );
-        background-size: 200% 100%;
-        animation: shimmer 2s infinite;
-        pointer-events: none;
-      }
-
-      /* Pulsing border effect */
-      @keyframes border-pulse {
-        0%,
-        100% {
-          border-color: rgba(99, 102, 241, 0.5);
-        }
-        50% {
-          border-color: rgba(6, 182, 212, 0.8);
-        }
-      }
-      .border-pulse {
-        animation: border-pulse 3s ease-in-out infinite;
-      }
-
-      /* Glassmorphism mejorado */
-      .glass {
-        background: rgba(15, 23, 42, 0.4);
-        backdrop-filter: blur(16px) saturate(180%);
-        -webkit-backdrop-filter: blur(16px) saturate(180%);
-        border: 1px solid rgba(99, 102, 241, 0.1);
-      }
-      .glass-hover:hover {
-        background: rgba(15, 23, 42, 0.6);
-        border-color: rgba(99, 102, 241, 0.3);
-      }
-
-      /* Button shine effect */
-      .btn-shine {
-        position: relative;
-        overflow: hidden;
-      }
-      .btn-shine::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -75%;
-        width: 50%;
-        height: 100%;
-        background: linear-gradient(
-          to right,
-          transparent,
-          rgba(255, 255, 255, 0.3),
-          transparent
-        );
-        transform: skewX(-25deg);
-        transition: left 0.75s;
-      }
-      .btn-shine:hover::before {
-        left: 125%;
-      }
-
-      /* Typing cursor effect */
-      @keyframes blink {
-        0%,
-        50% {
-          opacity: 1;
-        }
-        51%,
-        100% {
-          opacity: 0;
-        }
-      }
-      .typing-cursor::after {
-        content: "|";
-        animation: blink 1s infinite;
-        margin-left: 2px;
-      }
-
-      /* Floating particles */
-      @keyframes particle-float {
-        0%,
-        100% {
-          transform: translateY(0) translateX(0) rotate(0deg);
-          opacity: 0.6;
-        }
-        25% {
-          transform: translateY(-30px) translateX(10px) rotate(90deg);
-        }
-        50% {
-          transform: translateY(-50px) translateX(-10px) rotate(180deg);
-          opacity: 1;
-        }
-        75% {
-          transform: translateY(-30px) translateX(10px) rotate(270deg);
-        }
-      }
-      .particle {
-        position: absolute;
-        width: 6px;
-        height: 6px;
-        background: rgba(99, 102, 241, 0.6);
-        border-radius: 50%;
-        animation: particle-float 8s ease-in-out infinite;
-        pointer-events: none;
-      }
-
-      /* Header scroll effect */
-      .header-scrolled {
-        background: rgba(15, 23, 42, 0.95);
-        backdrop-filter: blur(20px);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-      }
-
-      /* Floating Images Effect */
-      .floating-img {
-        position: absolute;
-        pointer-events: none;
-        filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5));
-        opacity: 0.9;
-      }
-      .floating-img-1 {
-        animation: floatImage1 8s ease-in-out infinite;
-      }
-      .floating-img-2 {
-        animation: floatImage2 10s ease-in-out infinite;
-      }
-      .floating-img-3 {
-        animation: floatImage3 9s ease-in-out infinite;
-      }
-      .floating-img-4 {
-        animation: floatImage4 11s ease-in-out infinite;
-      }
-      @keyframes floatImage1 {
-        0%,
-        100% {
-          transform: translateY(0) rotate(-5deg);
-        }
-        50% {
-          transform: translateY(-25px) rotate(5deg);
-        }
-      }
-      @keyframes floatImage2 {
-        0%,
-        100% {
-          transform: translateY(0) rotate(3deg) scale(1);
-        }
-        50% {
-          transform: translateY(-30px) rotate(-3deg) scale(1.05);
-        }
-      }
-      @keyframes floatImage3 {
-        0%,
-        100% {
-          transform: translateY(0) rotate(-2deg);
-        }
-        50% {
-          transform: translateY(-20px) rotate(4deg);
-        }
-      }
-      @keyframes floatImage4 {
-        0%,
-        100% {
-          transform: translateY(0) rotate(4deg);
-        }
-        50% {
-          transform: translateY(-35px) rotate(-4deg);
-        }
-      }
-
-      /* Client Logos Marquee */
-      @keyframes marqueeScroll {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-50%);
-        }
-      }
-      .marquee-track {
-        animation: marqueeScroll 30s linear infinite;
-      }
-      .marquee-container {
-        mask-image: linear-gradient(
-          to right,
-          transparent,
-          black 10%,
-          black 90%,
-          transparent
-        );
-        -webkit-mask-image: linear-gradient(
-          to right,
-          transparent,
-          black 10%,
-          black 90%,
-          transparent
-        );
-      }
-    </style>
   </head>
-  <body class="bg-slate-950 text-white antialiased overflow-x-hidden">
-    <!-- Scroll Progress Bar -->
-    <div class="fixed top-0 left-0 w-full h-1 z-[9999] bg-slate-900/50">
-      <div
-        id="scroll-progress"
-        class="h-full bg-gradient-to-r from-indigo-500 via-cyan-500 to-amber-500 transition-[width] duration-150 ease-out"
-        style="width: 0%"
-      ></div>
-    </div>
+
+  <body class="antialiased">
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress" style="width: 0%"></div>
 
     <!-- Preloader -->
-    <div
-      id="preloader"
-      class="fixed inset-0 z-[9999] bg-slate-950 flex items-center justify-center"
-    >
-      <div class="text-center">
-        <div class="relative w-40 h-40 mx-auto mb-4">
-          <img
-            src="images/4.png"
-            alt="FMTech"
-            class="w-full h-full object-contain animate-pulse"
-          />
-          <div
-            class="absolute inset-0 bg-indigo-500/20 rounded-full blur-xl -z-10"
-          ></div>
-        </div>
-        <p
-          class="text-slate-400 text-sm mt-2"
-          data-translate-key="preloader_text"
-        >
-          Cargando experiencia...
-        </p>
-      </div>
+    <div id="preloader">
+      <img src="images/4.png" alt="FMTech" class="preloader-logo" />
+      <div class="preloader-bar"></div>
     </div>
 
-    <!-- Header -->
-    <header
-      id="header"
-      class="fixed w-full top-0 z-50 transition-all duration-500"
-    >
-      <div class="container mx-auto px-4 lg:px-8">
-        <div class="flex justify-between items-center py-1">
+    <!-- ==================== HEADER ==================== -->
+    <header id="header">
+      <div class="container">
+        <div class="flex justify-between items-center">
           <!-- Logo -->
-          <a href="index.html" class="flex items-center group">
+          <a href="index.html" class="relative z-[1001]">
             <img
               src="images/4.png"
               alt="FMTech Logo"
-              class="h-10 md:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+              class="h-10 md:h-11 w-auto object-contain"
             />
           </a>
 
-          <!-- Nav Desktop -->
+          <!-- Desktop Nav -->
           <nav class="hidden lg:flex items-center gap-8">
             <a
               href="#servicios"
-              class="text-sm font-medium text-slate-300 hover:text-white transition-colors relative group"
+              class="nav-link"
               data-translate-key="nav_services"
+              >Servicios</a
             >
-              Servicios
-              <span
-                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-cyan-500 group-hover:w-full transition-all duration-300"
-              ></span>
-            </a>
             <a
               href="portfolio.html"
-              class="text-sm font-medium text-slate-300 hover:text-white transition-colors relative group"
+              class="nav-link"
               data-translate-key="nav_portfolio"
+              >Portafolio</a
             >
-              Portafolio
-              <span
-                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-cyan-500 group-hover:w-full transition-all duration-300"
-              ></span>
-            </a>
             <a
               href="how-it-works.html"
-              class="text-sm font-medium text-slate-300 hover:text-white transition-colors relative group"
+              class="nav-link"
               data-translate-key="nav_process"
+              >Proceso</a
             >
-              Proceso
-              <span
-                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-cyan-500 group-hover:w-full transition-all duration-300"
-              ></span>
-            </a>
-            <a
-              href="faq.html"
-              class="text-sm font-medium text-slate-300 hover:text-white transition-colors relative group"
-              data-translate-key="nav_faq"
+            <a href="faq.html" class="nav-link" data-translate-key="nav_faq"
+              >FAQ</a
             >
-              FAQ
-              <span
-                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-cyan-500 group-hover:w-full transition-all duration-300"
-              ></span>
-            </a>
-            <a
-              href="blog.html"
-              class="text-sm font-medium text-slate-300 hover:text-white transition-colors relative group"
-              data-translate-key="nav_blog"
+            <a href="blog.html" class="nav-link" data-translate-key="nav_blog"
+              >Blog</a
             >
-              Blog
-              <span
-                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-cyan-500 group-hover:w-full transition-all duration-300"
-              ></span>
-            </a>
 
             <!-- Language Toggle -->
-            <div
-              class="flex items-center gap-1 px-3 py-1.5 bg-slate-800/50 rounded-full border border-slate-700/50"
-            >
-              <button
-                class="lang-toggle px-2 py-1 text-xs font-bold rounded-full transition-all"
-                data-lang="es"
-              >
-                ES
-              </button>
-              <button
-                class="lang-toggle px-2 py-1 text-xs font-bold rounded-full transition-all"
-                data-lang="en"
-              >
-                EN
-              </button>
+            <div class="lang-toggle-wrap">
+              <button class="lang-btn lang-toggle" data-lang="es">ES</button>
+              <button class="lang-btn lang-toggle" data-lang="en">EN</button>
             </div>
 
             <a
               href="#contacto"
-              class="magnetic-btn bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-cyan-500 text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg shadow-indigo-500/25 transition-all duration-300"
+              class="nav-cta magnetic"
               data-translate-key="nav_cta"
             >
-              Agendar Llamada
+              <span>Agendar Llamada</span>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
             </a>
           </nav>
 
-          <!-- Mobile Menu Button -->
-          <button
-            id="menu-btn"
-            class="lg:hidden relative w-10 h-10 flex items-center justify-center"
-          >
-            <div class="w-6 flex flex-col gap-1.5 transition-all duration-300">
-              <span
-                class="menu-line w-full h-0.5 bg-white rounded-full transition-all duration-300"
-              ></span>
-              <span
-                class="menu-line w-full h-0.5 bg-white rounded-full transition-all duration-300"
-              ></span>
-              <span
-                class="menu-line w-4 h-0.5 bg-white rounded-full transition-all duration-300 ml-auto"
-              ></span>
-            </div>
+          <!-- Mobile Hamburger -->
+          <button class="hamburger lg:hidden" id="menu-btn" aria-label="Menu">
+            <span></span><span></span><span></span>
           </button>
         </div>
       </div>
     </header>
 
     <!-- Mobile Menu -->
-    <div
-      id="mobile-menu"
-      class="mobile-menu fixed inset-y-0 right-0 w-full max-w-sm bg-slate-900/98 backdrop-blur-xl z-40 p-8 pt-24"
-    >
-      <nav class="flex flex-col gap-6">
+    <div id="mobile-menu" class="mobile-menu">
+      <nav class="text-center">
         <a
           href="#servicios"
-          class="text-2xl font-display font-bold text-white hover:text-indigo-400 transition-colors"
+          class="mobile-nav-link"
           data-translate-key="nav_services"
           >Servicios</a
         >
         <a
           href="portfolio.html"
-          class="text-2xl font-display font-bold text-white hover:text-indigo-400 transition-colors"
+          class="mobile-nav-link"
           data-translate-key="nav_portfolio"
           >Portafolio</a
         >
         <a
           href="how-it-works.html"
-          class="text-2xl font-display font-bold text-white hover:text-indigo-400 transition-colors"
+          class="mobile-nav-link"
           data-translate-key="nav_process"
           >Proceso</a
         >
-        <a
-          href="faq.html"
-          class="text-2xl font-display font-bold text-white hover:text-indigo-400 transition-colors"
-          data-translate-key="nav_faq"
+        <a href="faq.html" class="mobile-nav-link" data-translate-key="nav_faq"
           >FAQ</a
         >
         <a
           href="blog.html"
-          class="text-2xl font-display font-bold text-white hover:text-indigo-400 transition-colors"
+          class="mobile-nav-link"
           data-translate-key="nav_blog"
           >Blog</a
         >
-        <hr class="border-slate-700 my-4" />
-        <div class="flex gap-4">
+        <div class="flex justify-center gap-4 mt-8">
           <button
-            class="lang-toggle flex-1 py-3 text-center font-bold rounded-xl border border-slate-700 transition-all"
+            class="lang-toggle px-6 py-3 rounded-xl border border-white/10 font-bold text-sm transition-all"
             data-lang="es"
           >
             Español
           </button>
           <button
-            class="lang-toggle flex-1 py-3 text-center font-bold rounded-xl border border-slate-700 transition-all"
+            class="lang-toggle px-6 py-3 rounded-xl border border-white/10 font-bold text-sm transition-all"
             data-lang="en"
           >
             English
@@ -927,89 +271,109 @@
         </div>
         <a
           href="#contacto"
-          class="mt-4 bg-gradient-to-r from-indigo-600 to-cyan-500 text-white text-center py-4 rounded-xl font-bold"
+          class="mobile-nav-link mt-6 inline-block text-base px-8 py-4 rounded-full bg-indigo-500 text-white font-bold"
           data-translate-key="nav_cta"
+          >Agendar Llamada</a
         >
-          Agendar Llamada
-        </a>
       </nav>
     </div>
 
-    <!-- Hero Section -->
-    <section
-      class="min-h-screen gradient-hero relative overflow-hidden flex items-center"
-    >
-      <!-- Background Elements -->
-      <div class="absolute inset-0 bg-grid opacity-50"></div>
+    <!-- ==================== HERO ==================== -->
+    <section class="hero">
+      <!-- Background Effects -->
+      <canvas id="hero-canvas" class="hero-canvas"></canvas>
+      <div class="hero-grid"></div>
+      <div class="hero-gradient hero-gradient-1"></div>
+      <div class="hero-gradient hero-gradient-2"></div>
+
+      <!-- Floating Tags (desktop) -->
       <div
-        class="absolute top-20 left-10 w-72 h-72 bg-indigo-500/20 rounded-full blur-3xl blob"
-      ></div>
+        class="floating-tag hidden xl:flex top-[22%] left-[6%]"
+        style="animation-delay: 0s"
+      >
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"
+          />
+        </svg>
+        Tailwind CSS
+      </div>
       <div
-        class="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl blob"
+        class="floating-tag hidden xl:flex top-[35%] right-[5%]"
+        style="animation-delay: -2s"
+      >
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+          <path d="M2 12h20" />
+        </svg>
+        SEO Local
+      </div>
+      <div
+        class="floating-tag hidden xl:flex bottom-[28%] left-[8%]"
         style="animation-delay: -4s"
-      ></div>
-      <div
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-indigo-500/5 to-cyan-500/5 rounded-full"
-      ></div>
+      >
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="m13 2-2 2.5h3L12 7" />
+          <path d="M10 14v-3" />
+          <path d="M14 14v-3" />
+          <path
+            d="M12 22c-4.97 0-9-2.582-9-7v-4l3-1 3 1 3-1 3 1v4c0 4.418-4.03 7-9 7Z"
+          />
+        </svg>
+        Ultra Rápido
+      </div>
 
-      <!-- Floating Project Images -->
-      <img
-        src="images/proyecto1.webp"
-        alt=""
-        class="floating-img floating-img-1 hidden lg:block w-40 top-[15%] left-[5%] rounded-2xl"
-        loading="lazy"
-      />
-      <img
-        src="images/proyecto3.webp"
-        alt=""
-        class="floating-img floating-img-2 hidden lg:block w-48 top-[25%] right-[3%] rounded-2xl"
-        loading="lazy"
-      />
-      <img
-        src="images/proyecto5.webp"
-        alt=""
-        class="floating-img floating-img-3 hidden xl:block w-36 bottom-[20%] left-[8%] rounded-2xl"
-        loading="lazy"
-      />
-      <img
-        src="images/proyecto7.webp"
-        alt=""
-        class="floating-img floating-img-4 hidden xl:block w-44 bottom-[15%] right-[5%] rounded-2xl"
-        loading="lazy"
-      />
-
-      <div class="container mx-auto px-4 lg:px-8 pt-32 pb-20 relative z-10">
-        <div class="max-w-5xl mx-auto text-center">
+      <!-- Content -->
+      <div class="container relative z-10 pt-32 pb-24">
+        <div class="max-w-4xl">
           <!-- Badge -->
-          <div
-            class="animate-slide-up inline-flex items-center gap-2 px-4 py-2 bg-slate-800/50 border border-slate-700/50 rounded-full mb-8 backdrop-blur-sm"
-          >
-            <span
-              class="w-2 h-2 bg-green-500 rounded-full animate-pulse"
-            ></span>
-            <span class="text-sm text-slate-300" data-translate-key="hero_badge"
-              >Agencia #1 en Cartagena, Colombia</span
-            >
+          <div class="hero-badge reveal" data-translate-key="hero_badge">
+            <span class="pulse"></span>
+            Agencia #1 en Cartagena, Colombia
           </div>
 
-          <!-- Headline -->
-          <h1
-            class="animate-slide-up animation-delay-200 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-6"
-          >
-            <span data-translate-key="hero_title_1"
-              >Creamos sitios web que</span
+          <!-- Title -->
+          <h1 class="hero-title">
+            <span class="line"
+              ><span class="line-inner" data-translate-key="hero_title_1"
+                >Creamos sitios web que</span
+              ></span
             >
-            <br />
-            <span
-              class="gradient-text-animated"
-              data-translate-key="hero_title_2"
-              >convierten visitantes en clientes</span
+            <span class="line"
+              ><span
+                class="line-inner gradient-text-animated"
+                data-translate-key="hero_title_2"
+                >convierten visitantes en clientes</span
+              ></span
             >
           </h1>
 
           <!-- Subtitle -->
           <p
-            class="animate-slide-up animation-delay-400 text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10"
+            class="hero-subtitle reveal"
+            style="transition-delay: 0.3s"
             data-translate-key="hero_subtitle"
           >
             Diseño web profesional, SEO local y estrategia digital para negocios
@@ -1018,71 +382,73 @@
 
           <!-- CTAs -->
           <div
-            class="animate-slide-up animation-delay-600 flex flex-col sm:flex-row gap-4 justify-center items-center"
+            class="flex flex-col sm:flex-row gap-4 reveal"
+            style="transition-delay: 0.5s"
           >
             <a
               href="#contacto"
-              class="magnetic-btn btn-shine w-full sm:w-auto bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-cyan-500 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+              class="btn-primary magnetic"
               data-translate-key="hero_cta"
             >
               <span>Agendar Consulta Gratis</span>
               <svg
-                class="w-5 h-5"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                ></path>
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
               </svg>
             </a>
             <a
               href="portfolio.html"
-              class="magnetic-btn w-full sm:w-auto px-8 py-4 rounded-full font-bold text-lg border-2 border-slate-600 hover:border-indigo-500 hover:bg-indigo-500/10 text-white hover:text-indigo-400 transition-all duration-300 flex items-center justify-center gap-2"
+              class="btn-outline magnetic"
               data-translate-key="hero_cta_secondary"
             >
               <span>Ver Proyectos</span>
               <svg
-                class="w-5 h-5"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24"
+                stroke-width="2"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                ></path>
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                ></path>
+                <circle cx="12" cy="12" r="10" />
+                <polygon points="10 8 16 12 10 16 10 8" />
               </svg>
             </a>
           </div>
 
-          <!-- Trust Badges -->
-          <div class="mt-16 pt-8 border-t border-slate-800">
+          <!-- Trust -->
+          <div
+            class="mt-16 pt-8 border-t border-white/5 reveal"
+            style="transition-delay: 0.7s"
+          >
             <p
-              class="text-sm text-slate-500 mb-6"
+              class="text-xs text-[var(--text-dim)] uppercase tracking-widest mb-4"
               data-translate-key="hero_trust"
             >
               Confianza de negocios en
             </p>
-            <div
-              class="flex flex-wrap justify-center items-center gap-8 opacity-60"
-            >
-              <span class="text-xl font-bold text-slate-400">Cartagena</span>
-              <span class="text-xl font-bold text-slate-400">Barranquilla</span>
-              <span class="text-xl font-bold text-slate-400">Bogotá</span>
-              <span class="text-xl font-bold text-slate-400">USA</span>
+            <div class="flex flex-wrap gap-8 items-center">
+              <span class="text-lg font-display font-semibold text-white/20"
+                >Cartagena</span
+              >
+              <span class="text-lg font-display font-semibold text-white/20"
+                >Barranquilla</span
+              >
+              <span class="text-lg font-display font-semibold text-white/20"
+                >Bogotá</span
+              >
+              <span class="text-lg font-display font-semibold text-white/20"
+                >USA</span
+              >
             </div>
           </div>
         </div>
@@ -1090,83 +456,54 @@
 
       <!-- Scroll Indicator -->
       <div
-        class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce"
+        class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40"
       >
-        <span class="text-xs text-slate-500" data-translate-key="scroll_down"
+        <span
+          class="text-[10px] uppercase tracking-[0.2em] text-[var(--text-dim)]"
+          data-translate-key="scroll_down"
           >Scroll</span
         >
-        <svg
-          class="w-5 h-5 text-slate-500"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
+        <div
+          class="w-[1px] h-8 bg-gradient-to-b from-white/30 to-transparent relative overflow-hidden"
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"
-          ></path>
-        </svg>
+          <div
+            class="absolute top-0 left-0 w-full h-3 bg-white/80 animate-bounce"
+          ></div>
+        </div>
       </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="py-12 bg-slate-900 border-y border-slate-800">
-      <div class="container mx-auto px-4 lg:px-8">
+    <!-- ==================== STATS ==================== -->
+    <section class="stats-bar">
+      <div class="container">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div class="text-center reveal">
-            <div
-              class="text-4xl md:text-5xl font-display font-bold gradient-text counter"
-              data-target="50"
-            >
+          <div class="stat-item reveal">
+            <div class="stat-number gradient-text counter" data-target="50">
               0
             </div>
-            <div
-              class="text-sm text-slate-400 mt-2"
-              data-translate-key="stat_projects"
-            >
+            <div class="stat-label" data-translate-key="stat_projects">
               Proyectos Entregados
             </div>
           </div>
-          <div class="text-center reveal">
-            <div
-              class="text-4xl md:text-5xl font-display font-bold gradient-text counter"
-              data-target="98"
-            >
+          <div class="stat-item reveal stagger-1">
+            <div class="stat-number gradient-text counter" data-target="98">
               0
             </div>
-            <div
-              class="text-sm text-slate-400 mt-2"
-              data-translate-key="stat_satisfaction"
-            >
+            <div class="stat-label" data-translate-key="stat_satisfaction">
               % Satisfacción
             </div>
           </div>
-          <div class="text-center reveal">
-            <div
-              class="text-4xl md:text-5xl font-display font-bold gradient-text counter"
-              data-target="5"
-            >
+          <div class="stat-item reveal stagger-2">
+            <div class="stat-number gradient-text counter" data-target="5">
               0
             </div>
-            <div
-              class="text-sm text-slate-400 mt-2"
-              data-translate-key="stat_years"
-            >
+            <div class="stat-label" data-translate-key="stat_years">
               Años de Experiencia
             </div>
           </div>
-          <div class="text-center reveal">
-            <div
-              class="text-4xl md:text-5xl font-display font-bold gradient-text"
-            >
-              24h
-            </div>
-            <div
-              class="text-sm text-slate-400 mt-2"
-              data-translate-key="stat_response"
-            >
+          <div class="stat-item reveal stagger-3">
+            <div class="stat-number gradient-text">24h</div>
+            <div class="stat-label" data-translate-key="stat_response">
               Tiempo de Respuesta
             </div>
           </div>
@@ -1174,23 +511,24 @@
       </div>
     </section>
 
-    <!-- Problem Section -->
-    <section class="py-20 lg:py-32 bg-slate-950">
-      <div class="container mx-auto px-4 lg:px-8">
-        <div class="max-w-3xl mx-auto text-center mb-16 reveal">
-          <span
-            class="text-indigo-400 font-semibold text-sm uppercase tracking-wider"
+    <!-- ==================== PROBLEMS ==================== -->
+    <section class="section section-dark">
+      <div class="container">
+        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+          <div
+            class="section-label justify-center"
             data-translate-key="problem_label"
-            >El Problema</span
           >
+            El Problema
+          </div>
           <h2
-            class="text-3xl md:text-4xl lg:text-5xl font-display font-bold mt-4 mb-6"
+            class="section-title text-balance"
             data-translate-key="problem_title"
           >
             ¿Tu sitio web no genera resultados?
           </h2>
           <p
-            class="text-lg text-slate-400"
+            class="section-subtitle mx-auto"
             data-translate-key="problem_subtitle"
           >
             Muchos negocios en Cartagena tienen presencia online, pero pocos
@@ -1198,117 +536,149 @@
           </p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div
-            class="reveal stagger-1 card-hover glow-hover glass bg-slate-900/50 border border-slate-800 rounded-2xl p-6"
-          >
-            <div
-              class="w-14 h-14 bg-red-500/10 rounded-xl flex items-center justify-center text-2xl mb-4"
-            >
-              📉
+        <div class="grid-3">
+          <div class="problem-card card reveal stagger-1">
+            <div class="card-icon bg-red-500/10 text-red-400">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+              </svg>
             </div>
-            <h3
-              class="text-xl font-bold mb-2"
-              data-translate-key="prob_1_title"
-            >
+            <h3 class="card-title" data-translate-key="prob_1_title">
               Cero Visibilidad
             </h3>
-            <p class="text-slate-400" data-translate-key="prob_1_desc">
+            <p class="card-text" data-translate-key="prob_1_desc">
               Tus clientes potenciales no te encuentran en Google. Tu
               competencia sí aparece.
             </p>
           </div>
-          <div
-            class="reveal stagger-2 card-hover glow-hover glass bg-slate-900/50 border border-slate-800 rounded-2xl p-6"
-          >
-            <div
-              class="w-14 h-14 bg-orange-500/10 rounded-xl flex items-center justify-center text-2xl mb-4"
-            >
-              🐌
+          <div class="problem-card card reveal stagger-2">
+            <div class="card-icon bg-orange-500/10 text-orange-400">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
             </div>
-            <h3
-              class="text-xl font-bold mb-2"
-              data-translate-key="prob_2_title"
-            >
+            <h3 class="card-title" data-translate-key="prob_2_title">
               Sitio Lento
             </h3>
-            <p class="text-slate-400" data-translate-key="prob_2_desc">
+            <p class="card-text" data-translate-key="prob_2_desc">
               Un sitio lento espanta clientes. Google penaliza la velocidad baja
               en móviles.
             </p>
           </div>
-          <div
-            class="reveal stagger-3 card-hover glow-hover glass bg-slate-900/50 border border-slate-800 rounded-2xl p-6"
-          >
-            <div
-              class="w-14 h-14 bg-yellow-500/10 rounded-xl flex items-center justify-center text-2xl mb-4"
-            >
-              📱
+          <div class="problem-card card reveal stagger-3">
+            <div class="card-icon bg-yellow-500/10 text-yellow-400">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+                <path d="M12 18h.01" />
+              </svg>
             </div>
-            <h3
-              class="text-xl font-bold mb-2"
-              data-translate-key="prob_3_title"
-            >
+            <h3 class="card-title" data-translate-key="prob_3_title">
               No es Responsivo
             </h3>
-            <p class="text-slate-400" data-translate-key="prob_3_desc">
+            <p class="card-text" data-translate-key="prob_3_desc">
               El 70% de tus visitantes vienen desde celular. ¿Tu sitio se ve
               bien ahí?
             </p>
           </div>
-          <div
-            class="reveal stagger-4 card-hover glow-hover glass bg-slate-900/50 border border-slate-800 rounded-2xl p-6"
-          >
-            <div
-              class="w-14 h-14 bg-purple-500/10 rounded-xl flex items-center justify-center text-2xl mb-4"
-            >
-              💸
+          <div class="problem-card card reveal stagger-4">
+            <div class="card-icon bg-purple-500/10 text-purple-400">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                />
+              </svg>
             </div>
-            <h3
-              class="text-xl font-bold mb-2"
-              data-translate-key="prob_4_title"
-            >
+            <h3 class="card-title" data-translate-key="prob_4_title">
               No Convierte
             </h3>
-            <p class="text-slate-400" data-translate-key="prob_4_desc">
+            <p class="card-text" data-translate-key="prob_4_desc">
               Tienes visitas pero no contactos. Tu web no guía al visitante
               hacia la acción.
             </p>
           </div>
-          <div
-            class="reveal stagger-5 card-hover glow-hover glass bg-slate-900/50 border border-slate-800 rounded-2xl p-6"
-          >
-            <div
-              class="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center text-2xl mb-4"
-            >
-              🎨
+          <div class="problem-card card reveal stagger-5">
+            <div class="card-icon bg-blue-500/10 text-blue-400">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z" />
+                <path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+                <path d="M12 2v2" />
+                <path d="M12 22v-2" />
+                <path d="m17 20.66-1-1.73" />
+                <path d="M11 10.27 7 3.34" />
+                <path d="m20.66 17-1.73-1" />
+                <path d="m3.34 7 1.73 1" />
+                <path d="M14 12h8" />
+                <path d="M2 12h2" />
+                <path d="m20.66 7-1.73 1" />
+                <path d="m3.34 17 1.73-1" />
+                <path d="m17 3.34-1 1.73" />
+                <path d="m11 13.73-4 6.93" />
+              </svg>
             </div>
-            <h3
-              class="text-xl font-bold mb-2"
-              data-translate-key="prob_5_title"
-            >
+            <h3 class="card-title" data-translate-key="prob_5_title">
               Diseño Anticuado
             </h3>
-            <p class="text-slate-400" data-translate-key="prob_5_desc">
+            <p class="card-text" data-translate-key="prob_5_desc">
               Un diseño viejo transmite desconfianza. Tu imagen es tu primer
               vendedor.
             </p>
           </div>
-          <div
-            class="reveal stagger-6 card-hover glow-hover glass bg-slate-900/50 border border-slate-800 rounded-2xl p-6"
-          >
-            <div
-              class="w-14 h-14 bg-cyan-500/10 rounded-xl flex items-center justify-center text-2xl mb-4"
-            >
-              🔧
+          <div class="problem-card card reveal stagger-6">
+            <div class="card-icon bg-cyan-500/10 text-cyan-400">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M18.36 6.64A9 9 0 0 1 20.77 15" />
+                <path d="M6.16 6.16a9 9 0 1 0 12.68 12.68" />
+                <path d="M12 2v4" />
+                <path d="m2 2 20 20" />
+              </svg>
             </div>
-            <h3
-              class="text-xl font-bold mb-2"
-              data-translate-key="prob_6_title"
-            >
+            <h3 class="card-title" data-translate-key="prob_6_title">
               Sin Soporte
             </h3>
-            <p class="text-slate-400" data-translate-key="prob_6_desc">
+            <p class="card-text" data-translate-key="prob_6_desc">
               Tu desarrollador desapareció. No tienes quién actualice o arregle
               tu sitio.
             </p>
@@ -1317,40 +687,24 @@
       </div>
     </section>
 
-    <!-- Services Section -->
-    <section
-      id="servicios"
-      class="py-20 lg:py-32 bg-slate-900 relative overflow-hidden"
-    >
-      <!-- Floating decorative images -->
-      <img
-        src="images/proyecto8.webp"
-        alt=""
-        class="floating-img floating-img-2 hidden xl:block w-32 top-[10%] right-[2%] rounded-2xl opacity-40"
-        loading="lazy"
-      />
-      <img
-        src="images/proyecto9.webp"
-        alt=""
-        class="floating-img floating-img-3 hidden xl:block w-28 bottom-[15%] left-[3%] rounded-2xl opacity-40"
-        loading="lazy"
-      />
-
-      <div class="container mx-auto px-4 lg:px-8 relative z-10">
-        <div class="max-w-3xl mx-auto text-center mb-16 reveal">
-          <span
-            class="text-cyan-400 font-semibold text-sm uppercase tracking-wider"
+    <!-- ==================== SERVICES ==================== -->
+    <section id="servicios" class="section section-darker">
+      <div class="container">
+        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+          <div
+            class="section-label justify-center"
             data-translate-key="services_label"
-            >Servicios</span
           >
+            Servicios
+          </div>
           <h2
-            class="text-3xl md:text-4xl lg:text-5xl font-display font-bold mt-4 mb-6"
+            class="section-title text-balance"
             data-translate-key="services_title"
           >
             Soluciones que impulsan tu negocio
           </h2>
           <p
-            class="text-lg text-slate-400"
+            class="section-subtitle mx-auto"
             data-translate-key="services_subtitle"
           >
             No solo hacemos sitios web bonitos. Creamos máquinas de generar
@@ -1358,645 +712,382 @@
           </p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid-3 gap-lg">
           <!-- Service 1 -->
-          <div
-            class="reveal stagger-1 group relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-slate-700 overflow-hidden card-hover glow-hover shimmer"
-          >
-            <div
-              class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl group-hover:bg-indigo-500/20 transition-all duration-500"
-            ></div>
-            <div class="relative">
-              <div
-                class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300"
-              >
-                🎨
+          <div class="service-card tilt-card reveal stagger-1">
+            <div class="service-glow bg-indigo-500"></div>
+            <div class="tilt-content">
+              <div class="service-icon bg-indigo-500/10">
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#818cf8"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"
+                  />
+                </svg>
               </div>
               <h3
-                class="text-2xl font-bold mb-4"
+                class="text-xl font-display font-bold mb-3"
                 data-translate-key="service_1_title"
               >
                 Diseño Web Premium
               </h3>
               <p
-                class="text-slate-400 mb-6"
+                class="text-sm text-[var(--text-muted)] mb-6 leading-relaxed"
                 data-translate-key="service_1_desc"
               >
                 Sitios web a medida con diseño moderno, optimizados para
                 convertir visitantes en clientes. Sin plantillas genéricas.
               </p>
-              <ul class="space-y-2 text-sm text-slate-300">
-                <li class="flex items-center gap-2">
-                  <svg
-                    class="w-4 h-4 text-green-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
+              <div class="space-y-2">
+                <div class="service-feature">
+                  <svg viewBox="0 0 20 20" fill="currentColor">
                     <path
                       fill-rule="evenodd"
                       d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                       clip-rule="evenodd"
-                    ></path></svg
+                    /></svg
                   ><span data-translate-key="service_1_f1"
                     >Diseño 100% personalizado</span
                   >
-                </li>
-                <li class="flex items-center gap-2">
-                  <svg
-                    class="w-4 h-4 text-green-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
+                </div>
+                <div class="service-feature">
+                  <svg viewBox="0 0 20 20" fill="currentColor">
                     <path
                       fill-rule="evenodd"
                       d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                       clip-rule="evenodd"
-                    ></path></svg
+                    /></svg
                   ><span data-translate-key="service_1_f2"
                     >Optimizado para móvil</span
                   >
-                </li>
-                <li class="flex items-center gap-2">
-                  <svg
-                    class="w-4 h-4 text-green-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
+                </div>
+                <div class="service-feature">
+                  <svg viewBox="0 0 20 20" fill="currentColor">
                     <path
                       fill-rule="evenodd"
                       d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                       clip-rule="evenodd"
-                    ></path></svg
+                    /></svg
                   ><span data-translate-key="service_1_f3"
                     >Ultra rápido en Google</span
                   >
-                </li>
-              </ul>
+                </div>
+              </div>
             </div>
           </div>
 
           <!-- Service 2 -->
-          <div
-            class="reveal stagger-2 group relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-slate-700 overflow-hidden card-hover glow-hover shimmer"
-          >
-            <div
-              class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl group-hover:bg-cyan-500/20 transition-all duration-500"
-            ></div>
-            <div class="relative">
-              <div
-                class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300"
-              >
-                🔍
+          <div class="service-card tilt-card reveal stagger-2">
+            <div class="service-glow bg-cyan-500"></div>
+            <div class="tilt-content">
+              <div class="service-icon bg-cyan-500/10">
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#06b6d4"
+                  stroke-width="1.5"
+                >
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
+                  <path d="M11 8v6" />
+                  <path d="M8 11h6" />
+                </svg>
               </div>
               <h3
-                class="text-2xl font-bold mb-4"
+                class="text-xl font-display font-bold mb-3"
                 data-translate-key="service_2_title"
               >
                 SEO Local Cartagena
               </h3>
               <p
-                class="text-slate-400 mb-6"
+                class="text-sm text-[var(--text-muted)] mb-6 leading-relaxed"
                 data-translate-key="service_2_desc"
               >
                 Posicionamiento en Google para que clientes en Cartagena te
                 encuentren primero. SEO técnico y de contenido.
               </p>
-              <ul class="space-y-2 text-sm text-slate-300">
-                <li class="flex items-center gap-2">
-                  <svg
-                    class="w-4 h-4 text-green-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
+              <div class="space-y-2">
+                <div class="service-feature">
+                  <svg viewBox="0 0 20 20" fill="currentColor">
                     <path
                       fill-rule="evenodd"
                       d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                       clip-rule="evenodd"
-                    ></path></svg
+                    /></svg
                   ><span data-translate-key="service_2_f1"
                     >Google My Business</span
                   >
-                </li>
-                <li class="flex items-center gap-2">
-                  <svg
-                    class="w-4 h-4 text-green-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
+                </div>
+                <div class="service-feature">
+                  <svg viewBox="0 0 20 20" fill="currentColor">
                     <path
                       fill-rule="evenodd"
                       d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                       clip-rule="evenodd"
-                    ></path></svg
+                    /></svg
                   ><span data-translate-key="service_2_f2"
                     >Keywords locales</span
                   >
-                </li>
-                <li class="flex items-center gap-2">
-                  <svg
-                    class="w-4 h-4 text-green-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
+                </div>
+                <div class="service-feature">
+                  <svg viewBox="0 0 20 20" fill="currentColor">
                     <path
                       fill-rule="evenodd"
                       d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                       clip-rule="evenodd"
-                    ></path></svg
+                    /></svg
                   ><span data-translate-key="service_2_f3"
                     >Resultados medibles</span
                   >
-                </li>
-              </ul>
+                </div>
+              </div>
             </div>
           </div>
 
           <!-- Service 3 -->
-          <div
-            class="reveal stagger-3 group relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-slate-700 overflow-hidden card-hover glow-hover shimmer"
-          >
-            <div
-              class="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/20 transition-all duration-500"
-            ></div>
-            <div class="relative">
-              <div
-                class="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300"
-              >
-                ⚡
+          <div class="service-card tilt-card reveal stagger-3">
+            <div class="service-glow bg-amber-500"></div>
+            <div class="tilt-content">
+              <div class="service-icon bg-amber-500/10">
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#f59e0b"
+                  stroke-width="1.5"
+                >
+                  <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
               </div>
               <h3
-                class="text-2xl font-bold mb-4"
+                class="text-xl font-display font-bold mb-3"
                 data-translate-key="service_3_title"
               >
                 Optimización & Velocidad
               </h3>
               <p
-                class="text-slate-400 mb-6"
+                class="text-sm text-[var(--text-muted)] mb-6 leading-relaxed"
                 data-translate-key="service_3_desc"
               >
                 Mejoramos la velocidad de tu sitio actual para que cargue en
                 menos de 3 segundos y Google te posicione mejor.
               </p>
-              <ul class="space-y-2 text-sm text-slate-300">
-                <li class="flex items-center gap-2">
-                  <svg
-                    class="w-4 h-4 text-green-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
+              <div class="space-y-2">
+                <div class="service-feature">
+                  <svg viewBox="0 0 20 20" fill="currentColor">
                     <path
                       fill-rule="evenodd"
                       d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                       clip-rule="evenodd"
-                    ></path></svg
+                    /></svg
                   ><span data-translate-key="service_3_f1"
                     >Core Web Vitals</span
                   >
-                </li>
-                <li class="flex items-center gap-2">
-                  <svg
-                    class="w-4 h-4 text-green-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
+                </div>
+                <div class="service-feature">
+                  <svg viewBox="0 0 20 20" fill="currentColor">
                     <path
                       fill-rule="evenodd"
                       d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                       clip-rule="evenodd"
-                    ></path></svg
+                    /></svg
                   ><span data-translate-key="service_3_f2"
                     >Optimización de imágenes</span
                   >
-                </li>
-                <li class="flex items-center gap-2">
-                  <svg
-                    class="w-4 h-4 text-green-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
+                </div>
+                <div class="service-feature">
+                  <svg viewBox="0 0 20 20" fill="currentColor">
                     <path
                       fill-rule="evenodd"
                       d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                       clip-rule="evenodd"
-                    ></path></svg
+                    /></svg
                   ><span data-translate-key="service_3_f3">Caché y CDN</span>
-                </li>
-              </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Portfolio Preview -->
-    <section class="py-20 lg:py-32 bg-slate-950">
-      <div class="container mx-auto px-4 lg:px-8">
+    <!-- ==================== PORTFOLIO ==================== -->
+    <section class="section section-dark">
+      <div class="container">
         <div
           class="flex flex-col md:flex-row md:items-end md:justify-between mb-12 reveal"
         >
           <div>
-            <span
-              class="text-indigo-400 font-semibold text-sm uppercase tracking-wider"
-              data-translate-key="portfolio_label"
-              >Portafolio</span
-            >
-            <h2
-              class="text-3xl md:text-4xl lg:text-5xl font-display font-bold mt-4"
-              data-translate-key="portfolio_title"
-            >
+            <div class="section-label" data-translate-key="portfolio_label">
+              Portafolio
+            </div>
+            <h2 class="section-title" data-translate-key="portfolio_title">
               Proyectos que hablan por sí solos
             </h2>
           </div>
           <a
             href="portfolio.html"
-            class="mt-4 md:mt-0 text-indigo-400 font-semibold flex items-center gap-2 hover:text-indigo-300 transition-colors"
+            class="mt-4 md:mt-0 text-sm font-semibold text-indigo-400 hover:text-indigo-300 transition-colors flex items-center gap-2"
             data-translate-key="portfolio_view_all"
           >
             Ver todos los proyectos
             <svg
-              class="w-5 h-5"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              viewBox="0 0 24 24"
+              stroke-width="2"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              ></path>
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
             </svg>
           </a>
         </div>
 
-        <!-- Portfolio Grid -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div
-            class="reveal group parallax-container rounded-2xl overflow-hidden cursor-pointer"
-            style="transition-delay: 0ms"
-          >
-            <div class="relative aspect-[4/3]">
-              <img
-                src="images/proyecto1.webp"
-                alt="E-commerce de yates personalizados"
-                class="parallax-img w-full h-full object-cover"
-                loading="lazy"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-              ></div>
-              <div
-                class="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500"
-              >
-                <span class="text-indigo-400 text-sm font-semibold"
-                  >E-Commerce</span
-                >
-                <h3 class="text-xl font-bold text-white mt-1">
-                  Willis Custom Yachts
-                </h3>
-                <p class="text-slate-300 text-sm mt-2">
-                  Tienda online con configurador 3D de yates. +40% ventas
-                  internacionales.
-                </p>
-              </div>
+          <div class="portfolio-item aspect-[4/3] reveal stagger-1">
+            <img
+              src="images/proyecto1.webp"
+              alt="Willis Custom Yachts"
+              loading="lazy"
+            />
+            <div class="portfolio-overlay">
+              <span class="tag text-indigo-400">E-Commerce</span>
+              <h3>Willis Custom Yachts</h3>
+              <p>
+                Tienda online con configurador 3D. +40% ventas internacionales.
+              </p>
             </div>
           </div>
-
-          <div
-            class="reveal group parallax-container rounded-2xl overflow-hidden cursor-pointer"
-            style="transition-delay: 100ms"
-          >
-            <div class="relative aspect-[4/3]">
-              <img
-                src="images/proyecto2.webp"
-                alt="Portal educativo de buceo técnico"
-                class="parallax-img w-full h-full object-cover"
-                loading="lazy"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-              ></div>
-              <div
-                class="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500"
-              >
-                <span class="text-cyan-400 text-sm font-semibold"
-                  >Educación</span
-                >
-                <h3 class="text-xl font-bold text-white mt-1">
-                  TechDiving Institute
-                </h3>
-                <p class="text-slate-300 text-sm mt-2">
-                  Plataforma de cursos con reservas online. Sistema de
-                  certificaciones integrado.
-                </p>
-              </div>
+          <div class="portfolio-item aspect-[4/3] reveal stagger-2">
+            <img
+              src="images/proyecto2.webp"
+              alt="TechDiving Institute"
+              loading="lazy"
+            />
+            <div class="portfolio-overlay">
+              <span class="tag text-cyan-400">Educación</span>
+              <h3>TechDiving Institute</h3>
+              <p>Plataforma de cursos con reservas online y certificaciones.</p>
             </div>
           </div>
-
-          <div
-            class="reveal group parallax-container rounded-2xl overflow-hidden cursor-pointer"
-            style="transition-delay: 200ms"
-          >
-            <div class="relative aspect-[4/3]">
-              <img
-                src="images/proyecto3.webp"
-                alt="Web corporativa de astillero industrial"
-                class="parallax-img w-full h-full object-cover"
-                loading="lazy"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-              ></div>
-              <div
-                class="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500"
-              >
-                <span class="text-amber-400 text-sm font-semibold"
-                  >Industrial</span
-                >
-                <h3 class="text-xl font-bold text-white mt-1">
-                  Chesapeake Shipbuilding
-                </h3>
-                <p class="text-slate-300 text-sm mt-2">
-                  Portal corporativo con catálogo de flota. Carga optimizada en
-                  0.9s.
-                </p>
-              </div>
+          <div class="portfolio-item aspect-[4/3] reveal stagger-3">
+            <img
+              src="images/proyecto3.webp"
+              alt="Chesapeake Shipbuilding"
+              loading="lazy"
+            />
+            <div class="portfolio-overlay">
+              <span class="tag text-amber-400">Industrial</span>
+              <h3>Chesapeake Shipbuilding</h3>
+              <p>Portal corporativo con catálogo. Carga en 0.9s.</p>
             </div>
           </div>
-
-          <div
-            class="reveal group parallax-container rounded-2xl overflow-hidden cursor-pointer"
-            style="transition-delay: 300ms"
-          >
-            <div class="relative aspect-[4/3]">
-              <img
-                src="images/proyecto4.webp"
-                alt="Catálogo digital de construcción naval"
-                class="parallax-img w-full h-full object-cover"
-                loading="lazy"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-              ></div>
-              <div
-                class="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500"
-              >
-                <span class="text-green-400 text-sm font-semibold"
-                  >Catálogo</span
-                >
-                <h3 class="text-xl font-bold text-white mt-1">
-                  Scarano Boat Building
-                </h3>
-                <p class="text-slate-300 text-sm mt-2">
-                  Galería interactiva de embarcaciones. +60% tiempo en sitio.
-                </p>
-              </div>
+          <div class="portfolio-item aspect-[4/3] reveal stagger-4">
+            <img
+              src="images/proyecto4.webp"
+              alt="Scarano Boat Building"
+              loading="lazy"
+            />
+            <div class="portfolio-overlay">
+              <span class="tag text-green-400">Catálogo</span>
+              <h3>Scarano Boat Building</h3>
+              <p>Galería interactiva. +60% tiempo en sitio.</p>
             </div>
           </div>
-
-          <div
-            class="reveal group parallax-container rounded-2xl overflow-hidden cursor-pointer"
-            style="transition-delay: 400ms"
-          >
-            <div class="relative aspect-[4/3]">
-              <img
-                src="images/proyecto5.webp"
-                alt="Portal empresarial de servicios marítimos"
-                class="parallax-img w-full h-full object-cover"
-                loading="lazy"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-              ></div>
-              <div
-                class="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500"
-              >
-                <span class="text-purple-400 text-sm font-semibold"
-                  >Portal B2B</span
-                >
-                <h3 class="text-xl font-bold text-white mt-1">TBailey LLC</h3>
-                <p class="text-slate-300 text-sm mt-2">
-                  Sistema de cotizaciones automatizado. Reducción 50% tiempo de
-                  respuesta.
-                </p>
-              </div>
+          <div class="portfolio-item aspect-[4/3] reveal stagger-5">
+            <img src="images/proyecto5.webp" alt="TBailey LLC" loading="lazy" />
+            <div class="portfolio-overlay">
+              <span class="tag text-purple-400">Portal B2B</span>
+              <h3>TBailey LLC</h3>
+              <p>Cotizaciones automatizadas. -50% tiempo de respuesta.</p>
             </div>
           </div>
-
-          <div
-            class="reveal group parallax-container rounded-2xl overflow-hidden cursor-pointer"
-            style="transition-delay: 500ms"
-          >
-            <div class="relative aspect-[4/3]">
-              <img
-                src="images/proyecto6.webp"
-                alt="Landing page de diseño naval"
-                class="parallax-img w-full h-full object-cover"
-                loading="lazy"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-              ></div>
-              <div
-                class="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500"
-              >
-                <span class="text-pink-400 text-sm font-semibold"
-                  >Landing Page</span
-                >
-                <h3 class="text-xl font-bold text-white mt-1">
-                  Devlin Designing
-                </h3>
-                <p class="text-slate-300 text-sm mt-2">
-                  Página de captación con tasa de conversión del 12%. SEO
-                  optimizado.
-                </p>
-              </div>
+          <div class="portfolio-item aspect-[4/3] reveal stagger-6">
+            <img
+              src="images/proyecto6.webp"
+              alt="Devlin Designing"
+              loading="lazy"
+            />
+            <div class="portfolio-overlay">
+              <span class="tag text-pink-400">Landing Page</span>
+              <h3>Devlin Designing</h3>
+              <p>Tasa de conversión del 12%. SEO optimizado.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Clients Marquee Section -->
-    <section
-      class="py-12 bg-slate-900 border-y border-slate-800 overflow-hidden"
-    >
-      <div class="container mx-auto px-4 lg:px-8 mb-8">
+    <!-- ==================== CLIENTS MARQUEE ==================== -->
+    <section class="py-12 border-y border-white/5 bg-[var(--surface)]">
+      <div class="container mb-8">
         <p
-          class="text-center text-sm text-slate-500 uppercase tracking-wider"
+          class="text-center text-xs uppercase tracking-[0.2em] text-[var(--text-dim)]"
           data-translate-key="clients_label"
         >
           Empresas que confían en nosotros
         </p>
       </div>
-      <div class="marquee-container relative w-full">
-        <div class="marquee-track flex items-center gap-16 w-max">
-          <img
-            src="images/willis.webp"
-            alt="Willis"
-            class="h-12 md:h-16 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-            loading="lazy"
-          />
-          <img
-            src="images/devlin.webp"
-            alt="Devlin"
-            class="h-12 md:h-16 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-            loading="lazy"
-          />
-          <img
-            src="images/escamilla.webp"
-            alt="Escamilla"
-            class="h-12 md:h-16 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-            loading="lazy"
-          />
-          <img
-            src="images/estern.webp"
-            alt="Estern"
-            class="h-12 md:h-16 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-            loading="lazy"
-          />
-          <img
-            src="images/global.webp"
-            alt="Global"
-            class="h-12 md:h-16 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-            loading="lazy"
-          />
-          <img
-            src="images/heesen.webp"
-            alt="Heesen"
-            class="h-12 md:h-16 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-            loading="lazy"
-          />
-          <img
-            src="images/leidos.webp"
-            alt="Leidos"
-            class="h-12 md:h-16 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-            loading="lazy"
-          />
-          <img
-            src="images/marine.webp"
-            alt="Marine"
-            class="h-12 md:h-16 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-            loading="lazy"
-          />
-          <img
-            src="images/scarano.webp"
-            alt="Scarano"
-            class="h-12 md:h-16 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-            loading="lazy"
-          />
-          <img
-            src="images/seaward.webp"
-            alt="Seaward"
-            class="h-12 md:h-16 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-            loading="lazy"
-          />
-          <img
-            src="images/shoreline.webp"
-            alt="Shoreline"
-            class="h-12 md:h-16 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-            loading="lazy"
-          />
-          <img
-            src="images/vigor.webp"
-            alt="Vigor"
-            class="h-12 md:h-16 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-            loading="lazy"
-          />
+      <div class="marquee-container">
+        <div class="marquee-track">
+          <img src="images/willis.webp" alt="Willis" loading="lazy" />
+          <img src="images/devlin.webp" alt="Devlin" loading="lazy" />
+          <img src="images/escamilla.webp" alt="Escamilla" loading="lazy" />
+          <img src="images/estern.webp" alt="Estern" loading="lazy" />
+          <img src="images/global.webp" alt="Global" loading="lazy" />
+          <img src="images/heesen.webp" alt="Heesen" loading="lazy" />
+          <img src="images/leidos.webp" alt="Leidos" loading="lazy" />
+          <img src="images/marine.webp" alt="Marine" loading="lazy" />
+          <img src="images/scarano.webp" alt="Scarano" loading="lazy" />
+          <img src="images/seaward.webp" alt="Seaward" loading="lazy" />
+          <img src="images/shoreline.webp" alt="Shoreline" loading="lazy" />
+          <img src="images/vigor.webp" alt="Vigor" loading="lazy" />
           <!-- Duplicate for seamless loop -->
-          <img
-            src="images/willis.webp"
-            alt="Willis"
-            class="h-12 md:h-16 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-            loading="lazy"
-          />
-          <img
-            src="images/devlin.webp"
-            alt="Devlin"
-            class="h-12 md:h-16 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-            loading="lazy"
-          />
-          <img
-            src="images/escamilla.webp"
-            alt="Escamilla"
-            class="h-12 md:h-16 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-            loading="lazy"
-          />
-          <img
-            src="images/estern.webp"
-            alt="Estern"
-            class="h-12 md:h-16 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-            loading="lazy"
-          />
-          <img
-            src="images/global.webp"
-            alt="Global"
-            class="h-12 md:h-16 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-            loading="lazy"
-          />
-          <img
-            src="images/heesen.webp"
-            alt="Heesen"
-            class="h-12 md:h-16 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-            loading="lazy"
-          />
-          <img
-            src="images/leidos.webp"
-            alt="Leidos"
-            class="h-12 md:h-16 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-            loading="lazy"
-          />
-          <img
-            src="images/marine.webp"
-            alt="Marine"
-            class="h-12 md:h-16 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-            loading="lazy"
-          />
-          <img
-            src="images/scarano.webp"
-            alt="Scarano"
-            class="h-12 md:h-16 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-            loading="lazy"
-          />
-          <img
-            src="images/seaward.webp"
-            alt="Seaward"
-            class="h-12 md:h-16 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-            loading="lazy"
-          />
-          <img
-            src="images/shoreline.webp"
-            alt="Shoreline"
-            class="h-12 md:h-16 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-            loading="lazy"
-          />
-          <img
-            src="images/vigor.webp"
-            alt="Vigor"
-            class="h-12 md:h-16 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-            loading="lazy"
-          />
+          <img src="images/willis.webp" alt="Willis" loading="lazy" />
+          <img src="images/devlin.webp" alt="Devlin" loading="lazy" />
+          <img src="images/escamilla.webp" alt="Escamilla" loading="lazy" />
+          <img src="images/estern.webp" alt="Estern" loading="lazy" />
+          <img src="images/global.webp" alt="Global" loading="lazy" />
+          <img src="images/heesen.webp" alt="Heesen" loading="lazy" />
+          <img src="images/leidos.webp" alt="Leidos" loading="lazy" />
+          <img src="images/marine.webp" alt="Marine" loading="lazy" />
+          <img src="images/scarano.webp" alt="Scarano" loading="lazy" />
+          <img src="images/seaward.webp" alt="Seaward" loading="lazy" />
+          <img src="images/shoreline.webp" alt="Shoreline" loading="lazy" />
+          <img src="images/vigor.webp" alt="Vigor" loading="lazy" />
         </div>
       </div>
     </section>
 
-    <!-- Process Section -->
-    <section class="py-20 lg:py-32 bg-slate-900">
-      <div class="container mx-auto px-4 lg:px-8">
-        <div class="max-w-3xl mx-auto text-center mb-16 reveal">
-          <span
-            class="text-amber-400 font-semibold text-sm uppercase tracking-wider"
+    <!-- ==================== PROCESS ==================== -->
+    <section class="section section-dark">
+      <div class="container">
+        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+          <div
+            class="section-label justify-center"
             data-translate-key="process_label"
-            >Proceso</span
           >
+            Proceso
+          </div>
           <h2
-            class="text-3xl md:text-4xl lg:text-5xl font-display font-bold mt-4 mb-6"
+            class="section-title text-balance"
             data-translate-key="process_title"
           >
             Simple, rápido y efectivo
           </h2>
           <p
-            class="text-lg text-slate-400"
+            class="section-subtitle mx-auto"
             data-translate-key="process_subtitle"
           >
             Un proceso claro para que sepas exactamente qué esperar en cada
@@ -2005,92 +1096,83 @@
         </div>
 
         <div class="relative max-w-4xl mx-auto">
-          <!-- Connection Line -->
+          <!-- Connection line (desktop) -->
           <div
-            class="hidden md:block absolute top-24 left-1/2 -translate-x-1/2 w-[80%] h-0.5 bg-gradient-to-r from-indigo-500 via-cyan-500 to-amber-500"
+            class="hidden md:block absolute top-7 left-[12.5%] w-[75%] h-[2px] bg-gradient-to-r from-indigo-500 via-cyan-500 to-green-500 opacity-30"
           ></div>
 
           <div class="grid md:grid-cols-4 gap-8">
-            <div class="reveal text-center relative">
+            <div class="process-step reveal">
               <div
-                class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4 relative z-10"
+                class="process-number bg-gradient-to-br from-indigo-500 to-indigo-600 text-white"
               >
                 1
               </div>
               <h3
-                class="text-lg font-bold mb-2"
+                class="text-base font-display font-bold mb-2"
                 data-translate-key="step_1_title"
               >
                 Llamada Gratis
               </h3>
               <p
-                class="text-sm text-slate-400"
+                class="text-sm text-[var(--text-muted)]"
                 data-translate-key="step_1_desc"
               >
                 Hablamos de tu negocio y objetivos sin compromiso
               </p>
             </div>
-            <div
-              class="reveal text-center relative"
-              style="transition-delay: 100ms"
-            >
+            <div class="process-step reveal stagger-1">
               <div
-                class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4 relative z-10"
+                class="process-number bg-gradient-to-br from-cyan-500 to-cyan-600 text-white"
               >
                 2
               </div>
               <h3
-                class="text-lg font-bold mb-2"
+                class="text-base font-display font-bold mb-2"
                 data-translate-key="step_2_title"
               >
                 Propuesta
               </h3>
               <p
-                class="text-sm text-slate-400"
+                class="text-sm text-[var(--text-muted)]"
                 data-translate-key="step_2_desc"
               >
                 Te enviamos un plan detallado con precio fijo
               </p>
             </div>
-            <div
-              class="reveal text-center relative"
-              style="transition-delay: 200ms"
-            >
+            <div class="process-step reveal stagger-2">
               <div
-                class="w-12 h-12 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4 relative z-10"
+                class="process-number bg-gradient-to-br from-amber-500 to-amber-600 text-white"
               >
                 3
               </div>
               <h3
-                class="text-lg font-bold mb-2"
+                class="text-base font-display font-bold mb-2"
                 data-translate-key="step_3_title"
               >
                 Desarrollo
               </h3>
               <p
-                class="text-sm text-slate-400"
+                class="text-sm text-[var(--text-muted)]"
                 data-translate-key="step_3_desc"
               >
                 Construimos tu sitio con revisiones ilimitadas
               </p>
             </div>
-            <div
-              class="reveal text-center relative"
-              style="transition-delay: 300ms"
-            >
+            <div class="process-step reveal stagger-3">
               <div
-                class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4 relative z-10"
+                class="process-number bg-gradient-to-br from-green-500 to-green-600 text-white"
               >
                 4
               </div>
               <h3
-                class="text-lg font-bold mb-2"
+                class="text-base font-display font-bold mb-2"
                 data-translate-key="step_4_title"
               >
                 Lanzamiento
               </h3>
               <p
-                class="text-sm text-slate-400"
+                class="text-sm text-[var(--text-muted)]"
                 data-translate-key="step_4_desc"
               >
                 Publicamos y te enseñamos a manejar todo
@@ -2101,70 +1183,56 @@
       </div>
     </section>
 
-    <!-- Pricing / CTA Section -->
-    <section class="py-20 lg:py-32 bg-slate-950 relative overflow-hidden">
-      <!-- Background -->
-      <div class="absolute inset-0 bg-grid opacity-30"></div>
+    <!-- ==================== PRICING CTA ==================== -->
+    <section class="section section-darker relative overflow-hidden">
       <div
-        class="absolute top-0 left-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"
+        class="hero-gradient hero-gradient-1"
+        style="opacity: 0.08; top: auto; bottom: -200px"
       ></div>
       <div
-        class="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"
+        class="hero-gradient hero-gradient-2"
+        style="
+          opacity: 0.08;
+          bottom: auto;
+          top: -150px;
+          right: -100px;
+          left: auto;
+        "
       ></div>
+      <div class="hero-grid"></div>
 
-      <!-- Floating decorative images -->
-      <img
-        src="images/proyecto12.webp"
-        alt=""
-        class="floating-img floating-img-2 hidden xl:block w-40 top-[15%] left-[3%] rounded-2xl opacity-35"
-        loading="lazy"
-      />
-      <img
-        src="images/proyecto2.webp"
-        alt=""
-        class="floating-img floating-img-3 hidden xl:block w-36 bottom-[20%] right-[2%] rounded-2xl opacity-35"
-        loading="lazy"
-      />
-
-      <div class="container mx-auto px-4 lg:px-8 relative z-10">
-        <div class="max-w-4xl mx-auto">
-          <div
-            class="reveal bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-700 rounded-3xl p-8 md:p-12 backdrop-blur-sm text-center"
-          >
-            <span
-              class="text-green-400 font-semibold text-sm uppercase tracking-wider"
+      <div class="container relative z-10">
+        <div class="max-w-3xl mx-auto">
+          <div class="pricing-card reveal">
+            <div
+              class="section-label justify-center"
               data-translate-key="pricing_label"
-              >Inversión</span
             >
+              Inversión
+            </div>
             <h2
-              class="text-3xl md:text-4xl lg:text-5xl font-display font-bold mt-4 mb-6"
+              class="section-title text-center mb-8"
               data-translate-key="pricing_title"
             >
               Sitios web desde
             </h2>
 
             <div
-              class="flex flex-col md:flex-row items-center justify-center gap-4 mb-8"
+              class="flex flex-col md:flex-row items-center justify-center gap-6 mb-8"
             >
               <div class="text-center">
-                <span
-                  class="text-5xl md:text-6xl font-display font-bold gradient-text"
-                  >$600.000</span
-                >
-                <span class="text-xl text-slate-400 ml-2">COP</span>
+                <span class="price-amount gradient-text">$600.000</span>
+                <span class="text-lg text-[var(--text-dim)] ml-2">COP</span>
               </div>
-              <span class="text-2xl text-slate-500">o</span>
+              <span class="text-xl text-[var(--text-dim)]">o</span>
               <div class="text-center">
-                <span
-                  class="text-5xl md:text-6xl font-display font-bold gradient-text"
-                  >$150</span
-                >
-                <span class="text-xl text-slate-400 ml-2">USD</span>
+                <span class="price-amount gradient-text">$150</span>
+                <span class="text-lg text-[var(--text-dim)] ml-2">USD</span>
               </div>
             </div>
 
             <p
-              class="text-lg text-slate-400 max-w-2xl mx-auto mb-8"
+              class="text-[var(--text-muted)] text-center max-w-lg mx-auto mb-8 leading-relaxed"
               data-translate-key="pricing_desc"
             >
               Cada proyecto es único. Agenda una llamada gratuita para conocer
@@ -2173,11 +1241,11 @@
             </p>
 
             <div
-              class="flex flex-wrap justify-center gap-4 text-sm text-slate-300 mb-10"
+              class="flex flex-wrap justify-center gap-6 text-sm text-[var(--text-muted)] mb-10"
             >
               <div class="flex items-center gap-2">
                 <svg
-                  class="w-5 h-5 text-green-500"
+                  class="w-4 h-4 text-green-500"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -2185,13 +1253,13 @@
                     fill-rule="evenodd"
                     d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                     clip-rule="evenodd"
-                  ></path>
+                  />
                 </svg>
                 <span data-translate-key="pricing_f1">Sin costos ocultos</span>
               </div>
               <div class="flex items-center gap-2">
                 <svg
-                  class="w-5 h-5 text-green-500"
+                  class="w-4 h-4 text-green-500"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -2199,13 +1267,13 @@
                     fill-rule="evenodd"
                     d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                     clip-rule="evenodd"
-                  ></path>
+                  />
                 </svg>
                 <span data-translate-key="pricing_f2">Pagos fraccionados</span>
               </div>
               <div class="flex items-center gap-2">
                 <svg
-                  class="w-5 h-5 text-green-500"
+                  class="w-4 h-4 text-green-500"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -2213,366 +1281,219 @@
                     fill-rule="evenodd"
                     d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                     clip-rule="evenodd"
-                  ></path>
+                  />
                 </svg>
                 <span data-translate-key="pricing_f3">Soporte incluido</span>
               </div>
             </div>
 
-            <a
-              href="#contacto"
-              class="magnetic-btn inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white px-10 py-5 rounded-full font-bold text-lg shadow-lg shadow-indigo-500/25 transition-all duration-300"
-              data-translate-key="pricing_cta"
-            >
-              Agendar Llamada Gratuita
-              <svg
-                class="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            <div class="text-center">
+              <a
+                href="#contacto"
+                class="btn-primary magnetic"
+                data-translate-key="pricing_cta"
               >
-                <path
+                <span>Agendar Llamada Gratuita</span>
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                ></path>
-              </svg>
-            </a>
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="py-20 lg:py-32 bg-slate-900 overflow-hidden">
-      <div class="container mx-auto px-4 lg:px-8">
-        <div class="max-w-3xl mx-auto text-center mb-16 reveal">
-          <span
-            class="text-pink-400 font-semibold text-sm uppercase tracking-wider"
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section class="section section-dark overflow-hidden">
+      <div class="container">
+        <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+          <div
+            class="section-label justify-center"
             data-translate-key="testimonials_label"
-            >Testimonios</span
           >
-          <h2
-            class="text-3xl md:text-4xl lg:text-5xl font-display font-bold mt-4"
-            data-translate-key="testimonials_title"
-          >
+            Testimonios
+          </div>
+          <h2 class="section-title" data-translate-key="testimonials_title">
             Lo que dicen nuestros clientes
           </h2>
         </div>
 
-        <!-- Testimonial Slider -->
         <div
           id="testimonial-slider"
-          class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-6 pb-8"
+          class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-6 pb-4"
         >
-          <!-- Testimonials loaded via JS -->
+          <!-- Loaded via JS -->
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- ==================== CONTACT ==================== -->
     <section
       id="contacto"
-      class="py-20 lg:py-32 bg-slate-950 relative overflow-hidden"
+      class="section section-darker relative overflow-hidden"
     >
-      <!-- Background -->
-      <div class="absolute inset-0 bg-grid opacity-30"></div>
       <div
-        class="absolute top-1/2 left-0 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"
+        class="hero-gradient"
+        style="
+          width: 500px;
+          height: 500px;
+          background: var(--primary);
+          top: 50%;
+          left: 0;
+          transform: translate(-50%, -50%);
+          opacity: 0.06;
+        "
       ></div>
       <div
-        class="absolute top-1/2 right-0 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"
+        class="hero-gradient"
+        style="
+          width: 500px;
+          height: 500px;
+          background: var(--secondary);
+          top: 50%;
+          right: 0;
+          left: auto;
+          transform: translate(50%, -50%);
+          opacity: 0.06;
+        "
       ></div>
 
-      <!-- Floating decorative images -->
-      <img
-        src="images/proyecto10.webp"
-        alt=""
-        class="floating-img floating-img-1 hidden xl:block w-36 top-[8%] left-[5%] rounded-2xl opacity-30"
-        loading="lazy"
-      />
-      <img
-        src="images/proyecto11.webp"
-        alt=""
-        class="floating-img floating-img-4 hidden xl:block w-32 bottom-[10%] right-[4%] rounded-2xl opacity-30"
-        loading="lazy"
-      />
-
-      <div class="container mx-auto px-4 lg:px-8 relative z-10">
-        <div class="max-w-5xl mx-auto">
-          <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <!-- Left: Info -->
-            <div class="reveal">
-              <span
-                class="text-indigo-400 font-semibold text-sm uppercase tracking-wider"
-                data-translate-key="contact_label"
-                >Contacto</span
-              >
-              <h2
-                class="text-3xl md:text-4xl lg:text-5xl font-display font-bold mt-4 mb-6"
-                data-translate-key="contact_title"
-              >
-                Hablemos de tu proyecto
-              </h2>
-              <p
-                class="text-lg text-slate-400 mb-8"
-                data-translate-key="contact_subtitle"
-              >
-                Agenda una llamada gratuita de 15 minutos. Sin compromiso, sin
-                presión. Solo queremos conocer tu negocio y ver cómo podemos
-                ayudarte.
-              </p>
-
-              <div class="space-y-6">
-                <div class="flex items-start gap-4">
-                  <div
-                    class="w-12 h-12 flex items-center justify-center text-2xl flex-shrink-0"
-                  >
-                    📍
-                  </div>
-                  <div>
-                    <h3
-                      class="font-bold"
-                      data-translate-key="contact_location_title"
-                    >
-                      Ubicación
-                    </h3>
-                    <p class="text-slate-400">Cartagena de Indias, Colombia</p>
-                  </div>
-                </div>
-                <div class="flex items-start gap-4">
-                  <div
-                    class="w-12 h-12 flex items-center justify-center text-2xl flex-shrink-0"
-                  >
-                    📱
-                  </div>
-                  <div>
-                    <h3 class="font-bold">WhatsApp</h3>
-                    <a
-                      href="https://wa.me/573044301112"
-                      class="text-slate-400 hover:text-cyan-400 transition-colors"
-                      >+57 304 430 1112</a
-                    >
-                  </div>
-                </div>
-                <div class="flex items-start gap-4">
-                  <div
-                    class="w-12 h-12 flex items-center justify-center text-2xl flex-shrink-0"
-                  >
-                    ✉️
-                  </div>
-                  <div>
-                    <h3 class="font-bold">Email</h3>
-                    <a
-                      href="mailto:hola@frankmercado.com"
-                      class="text-slate-400 hover:text-amber-400 transition-colors"
-                      >hola@frankmercado.com</a
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <!-- Social Links -->
-              <div class="flex gap-4 mt-8">
-                <a
-                  href="#"
-                  class="w-10 h-10 flex items-center justify-center hover:scale-110 transition-transform"
-                >
-                  <img
-                    src="images/instagram-logo.png"
-                    alt="Instagram"
-                    class="w-8 h-8 object-contain"
-                  />
-                </a>
-                <a
-                  href="#"
-                  class="w-10 h-10 flex items-center justify-center hover:scale-110 transition-transform"
-                >
-                  <img
-                    src="images/logo-facebook.png"
-                    alt="Facebook"
-                    class="w-8 h-8 object-contain"
-                  />
-                </a>
-                <a
-                  href="https://wa.me/573044301112"
-                  class="w-10 h-10 flex items-center justify-center hover:scale-110 transition-transform"
-                >
-                  <img
-                    src="images/whatsapp-logo%20copy.png"
-                    alt="WhatsApp"
-                    class="w-8 h-8 object-contain"
-                  />
-                </a>
-              </div>
+      <div class="container relative z-10">
+        <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+          <!-- Info -->
+          <div class="reveal">
+            <div class="section-label" data-translate-key="contact_label">
+              Contacto
             </div>
-
-            <!-- Right: Form -->
-            <div class="reveal" style="transition-delay: 200ms">
-              <form
-                id="contact-form"
-                class="bg-slate-900/50 border border-slate-800 rounded-3xl p-8 backdrop-blur-sm"
-              >
-                <div class="space-y-6">
-                  <div>
-                    <label
-                      class="block text-sm font-semibold mb-2"
-                      data-translate-key="form_name"
-                      >Nombre completo</label
-                    >
-                    <input
-                      type="text"
-                      name="name"
-                      required
-                      class="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition-colors"
-                      placeholder="Tu nombre"
-                    />
-                  </div>
-                  <div class="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label
-                        class="block text-sm font-semibold mb-2"
-                        data-translate-key="form_email"
-                        >Email</label
-                      >
-                      <input
-                        type="email"
-                        name="email"
-                        required
-                        class="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition-colors"
-                        placeholder="tu@email.com"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        class="block text-sm font-semibold mb-2"
-                        data-translate-key="form_phone"
-                        >WhatsApp</label
-                      >
-                      <input
-                        type="tel"
-                        name="phone"
-                        class="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition-colors"
-                        placeholder="+57 300 000 0000"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label
-                      class="block text-sm font-semibold mb-2"
-                      data-translate-key="form_service"
-                      >¿Qué necesitas?</label
-                    >
-                    <select
-                      name="service"
-                      class="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
-                    >
-                      <option value="web" data-translate-key="form_opt_web">
-                        Sitio web nuevo
-                      </option>
-                      <option
-                        value="redesign"
-                        data-translate-key="form_opt_redesign"
-                      >
-                        Rediseño de sitio existente
-                      </option>
-                      <option value="seo" data-translate-key="form_opt_seo">
-                        SEO / Posicionamiento
-                      </option>
-                      <option value="speed" data-translate-key="form_opt_speed">
-                        Optimización de velocidad
-                      </option>
-                      <option value="other" data-translate-key="form_opt_other">
-                        Otro servicio
-                      </option>
-                    </select>
-                  </div>
-                  <div>
-                    <label
-                      class="block text-sm font-semibold mb-2"
-                      data-translate-key="form_message"
-                      >Cuéntanos sobre tu proyecto</label
-                    >
-                    <textarea
-                      name="message"
-                      rows="4"
-                      class="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition-colors resize-none"
-                      placeholder="¿Qué tipo de negocio tienes? ¿Cuáles son tus objetivos?"
-                    ></textarea>
-                  </div>
-                  <button
-                    type="submit"
-                    class="magnetic-btn w-full bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white py-4 rounded-xl font-bold text-lg transition-all duration-300 flex items-center justify-center gap-2"
-                    data-translate-key="form_submit"
-                  >
-                    <span>Enviar Mensaje</span>
-                    <svg
-                      class="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-slate-900 border-t border-slate-800 py-8 md:py-12">
-      <div class="container mx-auto px-4 lg:px-8">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-          <!-- Brand -->
-          <div class="col-span-2 md:col-span-1">
-            <div class="flex items-center mb-4">
-              <img
-                src="images/4.png"
-                alt="FMTech Logo"
-                class="h-10 w-auto object-contain"
-              />
-            </div>
+            <h2 class="section-title mb-6" data-translate-key="contact_title">
+              Hablemos de tu proyecto
+            </h2>
             <p
-              class="text-slate-400 text-xs md:text-sm mb-4 hidden md:block"
-              data-translate-key="footer_desc"
+              class="text-[var(--text-muted)] mb-10 leading-relaxed"
+              data-translate-key="contact_subtitle"
             >
-              Creamos sitios web profesionales que convierten visitantes en
-              clientes.
+              Agenda una llamada gratuita de 15 minutos. Sin compromiso, sin
+              presión. Solo queremos conocer tu negocio y ver cómo podemos
+              ayudarte.
             </p>
-            <div class="flex gap-4">
+
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-11 h-11 rounded-xl bg-[var(--surface-light)] flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#818cf8"
+                    stroke-width="1.5"
+                  >
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div>
+                  <h3
+                    class="font-semibold text-sm mb-1"
+                    data-translate-key="contact_location_title"
+                  >
+                    Ubicación
+                  </h3>
+                  <p class="text-sm text-[var(--text-muted)]">
+                    Cartagena de Indias, Colombia
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-11 h-11 rounded-xl bg-[var(--surface-light)] flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#22c55e"
+                    stroke-width="1.5"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-sm mb-1">WhatsApp</h3>
+                  <a
+                    href="https://wa.me/573044301112"
+                    class="text-sm text-[var(--text-muted)] hover:text-cyan-400 transition-colors"
+                    >+57 304 430 1112</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-11 h-11 rounded-xl bg-[var(--surface-light)] flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#f59e0b"
+                    stroke-width="1.5"
+                  >
+                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-sm mb-1">Email</h3>
+                  <a
+                    href="mailto:hola@frankmercado.com"
+                    class="text-sm text-[var(--text-muted)] hover:text-amber-400 transition-colors"
+                    >hola@frankmercado.com</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="flex gap-4 mt-10">
               <a
                 href="#"
-                class="hover:opacity-100 opacity-70 transition-opacity"
+                class="w-10 h-10 rounded-xl bg-[var(--surface-light)] border border-[var(--border)] flex items-center justify-center hover:border-[var(--border-hover)] hover:scale-105 transition-all"
               >
                 <img
-                  src="images/instagram-logo%20copy.png"
+                  src="images/instagram-logo.png"
                   alt="Instagram"
                   class="w-5 h-5 object-contain"
                 />
               </a>
               <a
                 href="#"
-                class="hover:opacity-100 opacity-70 transition-opacity"
+                class="w-10 h-10 rounded-xl bg-[var(--surface-light)] border border-[var(--border)] flex items-center justify-center hover:border-[var(--border-hover)] hover:scale-105 transition-all"
               >
                 <img
-                  src="images/logo-facebook%20copy.png"
+                  src="images/logo-facebook.png"
                   alt="Facebook"
                   class="w-5 h-5 object-contain"
                 />
               </a>
               <a
                 href="https://wa.me/573044301112"
-                class="hover:opacity-100 opacity-70 transition-opacity"
+                class="w-10 h-10 rounded-xl bg-[var(--surface-light)] border border-[var(--border)] flex items-center justify-center hover:border-[var(--border-hover)] hover:scale-105 transition-all"
               >
                 <img
                   src="images/whatsapp-logo%20copy.png"
@@ -2583,10 +1504,155 @@
             </div>
           </div>
 
+          <!-- Form -->
+          <div class="reveal" style="transition-delay: 0.2s">
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label class="form-label" data-translate-key="form_name"
+                  >Nombre completo</label
+                >
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  class="form-input"
+                  placeholder="Tu nombre"
+                />
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="form-group">
+                  <label class="form-label" data-translate-key="form_email"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    class="form-input"
+                    placeholder="tu@email.com"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" data-translate-key="form_phone"
+                    >WhatsApp</label
+                  >
+                  <input
+                    type="tel"
+                    name="phone"
+                    class="form-input"
+                    placeholder="+57 300 000 0000"
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" data-translate-key="form_service"
+                  >¿Qué necesitas?</label
+                >
+                <select name="service" class="form-select">
+                  <option value="web" data-translate-key="form_opt_web">
+                    Sitio web nuevo
+                  </option>
+                  <option
+                    value="redesign"
+                    data-translate-key="form_opt_redesign"
+                  >
+                    Rediseño de sitio existente
+                  </option>
+                  <option value="seo" data-translate-key="form_opt_seo">
+                    SEO / Posicionamiento
+                  </option>
+                  <option value="speed" data-translate-key="form_opt_speed">
+                    Optimización de velocidad
+                  </option>
+                  <option value="other" data-translate-key="form_opt_other">
+                    Otro servicio
+                  </option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" data-translate-key="form_message"
+                  >Cuéntanos sobre tu proyecto</label
+                >
+                <textarea
+                  name="message"
+                  rows="4"
+                  class="form-textarea"
+                  placeholder="¿Qué tipo de negocio tienes? ¿Cuáles son tus objetivos?"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="btn-primary w-full justify-center"
+                data-translate-key="form_submit"
+              >
+                <span>Enviar Mensaje</span>
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <!-- Brand -->
+          <div class="col-span-2 md:col-span-1">
+            <img
+              src="images/4.png"
+              alt="FMTech Logo"
+              class="h-10 w-auto object-contain mb-4"
+            />
+            <p
+              class="text-xs text-[var(--text-dim)] mb-4 hidden md:block leading-relaxed"
+              data-translate-key="footer_desc"
+            >
+              Creamos sitios web profesionales que convierten visitantes en
+              clientes.
+            </p>
+            <div class="flex gap-3">
+              <a
+                href="#"
+                class="opacity-50 hover:opacity-100 transition-opacity"
+                ><img
+                  src="images/instagram-logo%20copy.png"
+                  alt="Instagram"
+                  class="w-5 h-5 object-contain"
+              /></a>
+              <a
+                href="#"
+                class="opacity-50 hover:opacity-100 transition-opacity"
+                ><img
+                  src="images/logo-facebook%20copy.png"
+                  alt="Facebook"
+                  class="w-5 h-5 object-contain"
+              /></a>
+              <a
+                href="https://wa.me/573044301112"
+                class="opacity-50 hover:opacity-100 transition-opacity"
+                ><img
+                  src="images/whatsapp-logo%20copy.png"
+                  alt="WhatsApp"
+                  class="w-5 h-5 object-contain"
+              /></a>
+            </div>
+          </div>
           <!-- Links -->
           <div>
             <h4
-              class="font-bold text-white text-sm mb-3"
+              class="font-semibold text-sm mb-3"
               data-translate-key="footer_links"
             >
               Enlaces
@@ -2595,7 +1661,7 @@
               <li>
                 <a
                   href="#servicios"
-                  class="text-slate-400 hover:text-white transition-colors"
+                  class="text-[var(--text-dim)] hover:text-white transition-colors"
                   data-translate-key="nav_services"
                   >Servicios</a
                 >
@@ -2603,7 +1669,7 @@
               <li>
                 <a
                   href="portfolio.html"
-                  class="text-slate-400 hover:text-white transition-colors"
+                  class="text-[var(--text-dim)] hover:text-white transition-colors"
                   data-translate-key="nav_portfolio"
                   >Portafolio</a
                 >
@@ -2611,7 +1677,7 @@
               <li>
                 <a
                   href="how-it-works.html"
-                  class="text-slate-400 hover:text-white transition-colors"
+                  class="text-[var(--text-dim)] hover:text-white transition-colors"
                   data-translate-key="nav_process"
                   >Proceso</a
                 >
@@ -2619,7 +1685,7 @@
               <li>
                 <a
                   href="faq.html"
-                  class="text-slate-400 hover:text-white transition-colors"
+                  class="text-[var(--text-dim)] hover:text-white transition-colors"
                   data-translate-key="nav_faq"
                   >FAQ</a
                 >
@@ -2627,18 +1693,17 @@
               <li>
                 <a
                   href="blog.html"
-                  class="text-slate-400 hover:text-white transition-colors"
+                  class="text-[var(--text-dim)] hover:text-white transition-colors"
                   data-translate-key="nav_blog"
                   >Blog</a
                 >
               </li>
             </ul>
           </div>
-
-          <!-- Services - Hidden on mobile -->
+          <!-- Services -->
           <div class="hidden md:block">
             <h4
-              class="font-bold text-white text-sm mb-3"
+              class="font-semibold text-sm mb-3"
               data-translate-key="footer_services"
             >
               Servicios
@@ -2647,7 +1712,7 @@
               <li>
                 <a
                   href="#servicios"
-                  class="text-slate-400 hover:text-white transition-colors"
+                  class="text-[var(--text-dim)] hover:text-white transition-colors"
                   data-translate-key="service_1_title"
                   >Diseño Web Premium</a
                 >
@@ -2655,7 +1720,7 @@
               <li>
                 <a
                   href="#servicios"
-                  class="text-slate-400 hover:text-white transition-colors"
+                  class="text-[var(--text-dim)] hover:text-white transition-colors"
                   data-translate-key="service_2_title"
                   >SEO Local Cartagena</a
                 >
@@ -2663,23 +1728,22 @@
               <li>
                 <a
                   href="#servicios"
-                  class="text-slate-400 hover:text-white transition-colors"
+                  class="text-[var(--text-dim)] hover:text-white transition-colors"
                   data-translate-key="service_3_title"
                   >Optimización & Velocidad</a
                 >
               </li>
             </ul>
           </div>
-
           <!-- Contact -->
           <div>
             <h4
-              class="font-bold text-white text-sm mb-3"
+              class="font-semibold text-sm mb-3"
               data-translate-key="footer_contact"
             >
               Contacto
             </h4>
-            <ul class="space-y-2 text-xs text-slate-400">
+            <ul class="space-y-2 text-xs text-[var(--text-dim)]">
               <li class="hidden md:block">Cartagena, Colombia</li>
               <li>
                 <a
@@ -2691,7 +1755,7 @@
               <li>
                 <a
                   href="mailto:hola@frankmercado.com"
-                  class="hover:text-white transition-colors text-xs break-all"
+                  class="hover:text-white transition-colors break-all"
                   >hola@frankmercado.com</a
                 >
               </li>
@@ -2700,7 +1764,7 @@
         </div>
 
         <div
-          class="border-t border-slate-800 mt-6 pt-4 flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-slate-500"
+          class="footer-bottom flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-[var(--text-dim)]"
         >
           <p>
             &copy; 2026 FMTech.
@@ -2726,26 +1790,15 @@
       </div>
     </footer>
 
-    <!-- WhatsApp Float Button -->
+    <!-- WhatsApp Float -->
     <a
       href="https://wa.me/573044301112"
       target="_blank"
-      class="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-1 group"
+      rel="noopener noreferrer"
+      class="whatsapp-float"
     >
-      <div
-        class="w-16 h-16 flex items-center justify-center transition-all duration-300 group-hover:scale-110 drop-shadow-lg"
-      >
-        <img
-          src="images/whatsapp-logo%20copy.png"
-          alt="WhatsApp"
-          class="w-full h-full object-contain"
-        />
-      </div>
-      <span
-        class="text-xs font-bold text-white bg-green-500 px-3 py-1 rounded-full shadow-lg group-hover:bg-green-600 transition-colors"
-        data-translate-key="whatsapp_cta"
-        >¡Contáctanos!</span
-      >
+      <img src="images/whatsapp-logo%20copy.png" alt="WhatsApp" />
+      <span class="label" data-translate-key="whatsapp_cta">¡Contáctanos!</span>
     </a>
 
     <script src="scripts.js"></script>

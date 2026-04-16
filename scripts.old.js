@@ -1,6 +1,6 @@
 /**
  * FMTech - Agencia Web Cartagena
- * Scripts Premium con efectos interactivos avanzados
+ * Scripts principales con efectos profesionales
  * Bilingüe: Español (por defecto) / English
  */
 
@@ -10,14 +10,18 @@ document.addEventListener("DOMContentLoaded", () => {
   // ============================================
   const translations = {
     en: {
+      // Preloader
       preloader_text: "Loading experience...",
+
+      // Header
       header_tagline: "Web Design",
       nav_services: "Services",
       nav_portfolio: "Portfolio",
       nav_process: "Process",
       nav_faq: "FAQ",
-      nav_blog: "Blog",
       nav_cta: "Schedule Call",
+
+      // Hero
       hero_badge: "#1 Agency in Cartagena, Colombia",
       hero_title_1: "We create websites that",
       hero_title_2: "convert visitors into customers",
@@ -27,10 +31,14 @@ document.addEventListener("DOMContentLoaded", () => {
       hero_cta_secondary: "View Projects",
       hero_trust: "Trusted by businesses in",
       scroll_down: "Scroll",
+
+      // Stats
       stat_projects: "Projects Delivered",
       stat_satisfaction: "% Satisfaction",
       stat_years: "Years Experience",
       stat_response: "Response Time",
+
+      // Problems
       problem_label: "The Problem",
       problem_title: "Is your website not generating results?",
       problem_subtitle:
@@ -53,6 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
       prob_6_title: "No Support",
       prob_6_desc:
         "Your developer disappeared. You have nobody to update or fix your website.",
+
+      // Services
       services_label: "Services",
       services_title: "Solutions that drive your business",
       services_subtitle:
@@ -75,10 +85,16 @@ document.addEventListener("DOMContentLoaded", () => {
       service_3_f1: "Core Web Vitals",
       service_3_f2: "Image optimization",
       service_3_f3: "Cache and CDN",
+
+      // Portfolio
       portfolio_label: "Portfolio",
       portfolio_title: "Projects that speak for themselves",
       portfolio_view_all: "View all projects",
+
+      // Clients
       clients_label: "Companies that trust us",
+
+      // Process
       process_label: "Process",
       process_title: "Simple, fast and effective",
       process_subtitle:
@@ -91,6 +107,8 @@ document.addEventListener("DOMContentLoaded", () => {
       step_3_desc: "We build your site with unlimited revisions",
       step_4_title: "Launch",
       step_4_desc: "We publish and teach you to manage everything",
+
+      // Pricing
       pricing_label: "Investment",
       pricing_title: "Websites starting from",
       pricing_desc:
@@ -99,8 +117,12 @@ document.addEventListener("DOMContentLoaded", () => {
       pricing_f2: "Split payments",
       pricing_f3: "Support included",
       pricing_cta: "Schedule Free Call",
+
+      // Testimonials
       testimonials_label: "Testimonials",
       testimonials_title: "What our clients say",
+
+      // Contact
       contact_label: "Contact",
       contact_title: "Let's talk about your project",
       contact_subtitle:
@@ -117,16 +139,22 @@ document.addEventListener("DOMContentLoaded", () => {
       form_opt_other: "Other service",
       form_message: "Tell us about your project",
       form_submit: "Send Message",
+
+      // WhatsApp
       whatsapp_cta: "Contact us!",
+
+      // Footer
       footer_tagline: "Web Design Cartagena",
       footer_desc:
-        "We create professional websites that convert visitors into customers.",
+        "We create professional websites that convert visitors into customers. Design, development and local SEO in Cartagena, Colombia.",
       footer_links: "Links",
       footer_services: "Services",
       footer_contact: "Contact",
       footer_rights: "All rights reserved.",
       footer_privacy: "Privacy",
       footer_terms: "Terms",
+
+      // FAQ Page
       faq_hero_title: "Frequently Asked Questions",
       faq_hero_sub: "Clear answers for your digital journey.",
       q1: "How long does a project take?",
@@ -145,6 +173,8 @@ document.addEventListener("DOMContentLoaded", () => {
       a7: "We work in milestones. You approve designs and strategies before we build. Your satisfaction is our priority.",
       q8: "Is there support after launch?",
       a8: "Yes. We offer maintenance and growth retainers to ensure your digital presence keeps performing.",
+
+      // How It Works Page
       how_title: "Our Process",
       how_sub: "A structured approach to digital success.",
       step1_title: "Discovery & Analysis",
@@ -159,20 +189,28 @@ document.addEventListener("DOMContentLoaded", () => {
       step4_title: "Growth & Optimization",
       step4_d:
         "It doesn't end at launch. We analyze data for continuous improvement.",
+
+      // Portfolio Page
       port_page_title: "Success Cases",
       port_filter_all: "All",
       view_site: "View Site →",
+
+      // Blog Page
       blog_page_title: "Digital Strategy: Trends & Tips",
     },
     es: {
+      // Preloader
       preloader_text: "Cargando experiencia...",
+
+      // Header
       header_tagline: "Web Design",
       nav_services: "Servicios",
       nav_portfolio: "Portafolio",
       nav_process: "Proceso",
       nav_faq: "FAQ",
-      nav_blog: "Blog",
       nav_cta: "Agendar Llamada",
+
+      // Hero
       hero_badge: "Agencia #1 en Cartagena, Colombia",
       hero_title_1: "Creamos sitios web que",
       hero_title_2: "convierten visitantes en clientes",
@@ -182,10 +220,14 @@ document.addEventListener("DOMContentLoaded", () => {
       hero_cta_secondary: "Ver Proyectos",
       hero_trust: "Confianza de negocios en",
       scroll_down: "Scroll",
+
+      // Stats
       stat_projects: "Proyectos Entregados",
       stat_satisfaction: "% Satisfacción",
       stat_years: "Años de Experiencia",
       stat_response: "Tiempo de Respuesta",
+
+      // Problems
       problem_label: "El Problema",
       problem_title: "¿Tu sitio web no genera resultados?",
       problem_subtitle:
@@ -208,6 +250,8 @@ document.addEventListener("DOMContentLoaded", () => {
       prob_6_title: "Sin Soporte",
       prob_6_desc:
         "Tu desarrollador desapareció. No tienes quién actualice o arregle tu sitio.",
+
+      // Services
       services_label: "Servicios",
       services_title: "Soluciones que impulsan tu negocio",
       services_subtitle:
@@ -230,10 +274,16 @@ document.addEventListener("DOMContentLoaded", () => {
       service_3_f1: "Core Web Vitals",
       service_3_f2: "Optimización de imágenes",
       service_3_f3: "Caché y CDN",
+
+      // Portfolio
       portfolio_label: "Portafolio",
       portfolio_title: "Proyectos que hablan por sí solos",
       portfolio_view_all: "Ver todos los proyectos",
+
+      // Clients
       clients_label: "Empresas que confían en nosotros",
+
+      // Process
       process_label: "Proceso",
       process_title: "Simple, rápido y efectivo",
       process_subtitle:
@@ -246,6 +296,8 @@ document.addEventListener("DOMContentLoaded", () => {
       step_3_desc: "Construimos tu sitio con revisiones ilimitadas",
       step_4_title: "Lanzamiento",
       step_4_desc: "Publicamos y te enseñamos a manejar todo",
+
+      // Pricing
       pricing_label: "Inversión",
       pricing_title: "Sitios web desde",
       pricing_desc:
@@ -254,8 +306,12 @@ document.addEventListener("DOMContentLoaded", () => {
       pricing_f2: "Pagos fraccionados",
       pricing_f3: "Soporte incluido",
       pricing_cta: "Agendar Llamada Gratuita",
+
+      // Testimonials
       testimonials_label: "Testimonios",
       testimonials_title: "Lo que dicen nuestros clientes",
+
+      // Contact
       contact_label: "Contacto",
       contact_title: "Hablemos de tu proyecto",
       contact_subtitle:
@@ -272,16 +328,22 @@ document.addEventListener("DOMContentLoaded", () => {
       form_opt_other: "Otro servicio",
       form_message: "Cuéntanos sobre tu proyecto",
       form_submit: "Enviar Mensaje",
+
+      // WhatsApp
       whatsapp_cta: "¡Contáctanos!",
+
+      // Footer
       footer_tagline: "Web Design Cartagena",
       footer_desc:
-        "Creamos sitios web profesionales que convierten visitantes en clientes.",
+        "Creamos sitios web profesionales que convierten visitantes en clientes. Diseño, desarrollo y SEO local en Cartagena, Colombia.",
       footer_links: "Enlaces",
       footer_services: "Servicios",
       footer_contact: "Contacto",
       footer_rights: "Todos los derechos reservados.",
       footer_privacy: "Privacidad",
       footer_terms: "Términos",
+
+      // FAQ Page
       faq_hero_title: "Preguntas Frecuentes",
       faq_hero_sub: "Respuestas claras para tu viaje digital.",
       q1: "¿Cuánto tiempo tarda un proyecto?",
@@ -300,6 +362,8 @@ document.addEventListener("DOMContentLoaded", () => {
       a7: "Trabajamos por hitos. Apruebas diseños y estrategias antes de que construyamos. Tu satisfacción es nuestra prioridad.",
       q8: "¿Hay soporte después del lanzamiento?",
       a8: "Sí. Ofrecemos mantenimiento y planes de crecimiento para asegurar que tu presencia digital siga rindiendo.",
+
+      // How It Works Page
       how_title: "Nuestro Proceso",
       how_sub: "Un enfoque estructurado para el éxito digital.",
       step1_title: "Descubrimiento y Análisis",
@@ -314,9 +378,13 @@ document.addEventListener("DOMContentLoaded", () => {
       step4_title: "Crecimiento y Optimización",
       step4_d:
         "No termina en el lanzamiento. Analizamos datos para mejorar continuamente.",
+
+      // Portfolio Page
       port_page_title: "Casos de Éxito",
       port_filter_all: "Todos",
       view_site: "Ver Sitio →",
+
+      // Blog Page
       blog_page_title: "Estrategia Digital: Tendencias y Tips",
     },
   };
@@ -370,6 +438,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ============================================
   let currentLang = localStorage.getItem("fmtech-lang");
 
+  // Auto-detect language from browser if not set
   if (!currentLang) {
     const browserLang = navigator.language || navigator.userLanguage;
     currentLang = browserLang.startsWith("es") ? "es" : "en";
@@ -389,8 +458,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    // Update HTML lang attribute
     document.documentElement.lang = lang;
 
+    // Update language toggle buttons
     document.querySelectorAll(".lang-toggle").forEach((btn) => {
       const btnLang = btn.getAttribute("data-lang");
       if (btnLang === lang) {
@@ -403,6 +474,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Language toggle click handler
   document.querySelectorAll(".lang-toggle").forEach((btn) => {
     btn.addEventListener("click", () => {
       const lang = btn.getAttribute("data-lang");
@@ -413,182 +485,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Apply initial translations
   applyTranslations(currentLang);
 
   // ============================================
-  // CUSTOM CURSOR
-  // ============================================
-  const cursorDot = document.getElementById("cursor-dot");
-  const cursorRing = document.getElementById("cursor-ring");
-
-  if (cursorDot && cursorRing && window.innerWidth > 1024) {
-    let mouseX = 0,
-      mouseY = 0;
-    let ringX = 0,
-      ringY = 0;
-
-    document.addEventListener("mousemove", (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      cursorDot.style.left = mouseX - 4 + "px";
-      cursorDot.style.top = mouseY - 4 + "px";
-    });
-
-    // Smooth ring follow
-    const animateRing = () => {
-      ringX += (mouseX - ringX) * 0.15;
-      ringY += (mouseY - ringY) * 0.15;
-      cursorRing.style.left = ringX - 20 + "px";
-      cursorRing.style.top = ringY - 20 + "px";
-      requestAnimationFrame(animateRing);
-    };
-    animateRing();
-
-    // Hover state on interactive elements
-    const hoverTargets = document.querySelectorAll(
-      "a, button, .tilt-card, .portfolio-item, input, textarea, select",
-    );
-    hoverTargets.forEach((el) => {
-      el.addEventListener("mouseenter", () =>
-        cursorRing.classList.add("hover"),
-      );
-      el.addEventListener("mouseleave", () =>
-        cursorRing.classList.remove("hover"),
-      );
-    });
-
-    // Click state
-    document.addEventListener("mousedown", () =>
-      cursorRing.classList.add("click"),
-    );
-    document.addEventListener("mouseup", () =>
-      cursorRing.classList.remove("click"),
-    );
-  }
-
-  // ============================================
-  // HERO CANVAS PARTICLE BACKGROUND
-  // ============================================
-  const heroCanvas = document.getElementById("hero-canvas");
-  if (heroCanvas) {
-    const ctx = heroCanvas.getContext("2d");
-    let particles = [];
-    let animId;
-
-    const resize = () => {
-      heroCanvas.width = heroCanvas.parentElement.offsetWidth;
-      heroCanvas.height = heroCanvas.parentElement.offsetHeight;
-    };
-    resize();
-    window.addEventListener("resize", resize);
-
-    class Particle {
-      constructor() {
-        this.reset();
-      }
-      reset() {
-        this.x = Math.random() * heroCanvas.width;
-        this.y = Math.random() * heroCanvas.height;
-        this.size = Math.random() * 1.5 + 0.5;
-        this.speedX = (Math.random() - 0.5) * 0.4;
-        this.speedY = (Math.random() - 0.5) * 0.4;
-        this.opacity = Math.random() * 0.5 + 0.1;
-      }
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        if (this.x < 0 || this.x > heroCanvas.width) this.speedX *= -1;
-        if (this.y < 0 || this.y > heroCanvas.height) this.speedY *= -1;
-      }
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(99, 102, 241, ${this.opacity})`;
-        ctx.fill();
-      }
-    }
-
-    // Create particles based on viewport
-    const numParticles = Math.min(
-      Math.floor((heroCanvas.width * heroCanvas.height) / 12000),
-      120,
-    );
-    for (let i = 0; i < numParticles; i++) {
-      particles.push(new Particle());
-    }
-
-    const connectDistance = 150;
-
-    const animate = () => {
-      ctx.clearRect(0, 0, heroCanvas.width, heroCanvas.height);
-
-      particles.forEach((p) => {
-        p.update();
-        p.draw();
-      });
-
-      // Draw connections
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < connectDistance) {
-            const opacity = (1 - dist / connectDistance) * 0.15;
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(99, 102, 241, ${opacity})`;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-          }
-        }
-      }
-
-      animId = requestAnimationFrame(animate);
-    };
-    animate();
-
-    // Pause when not visible
-    const heroObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            if (!animId) animate();
-          } else {
-            cancelAnimationFrame(animId);
-            animId = null;
-          }
-        });
-      },
-      { threshold: 0.1 },
-    );
-    heroObserver.observe(heroCanvas.parentElement);
-  }
-
-  // ============================================
-  // HERO TITLE LINE REVEAL
-  // ============================================
-  const heroLines = document.querySelectorAll(".hero-title .line-inner");
-  setTimeout(() => {
-    heroLines.forEach((line, i) => {
-      setTimeout(() => line.classList.add("visible"), i * 200);
-    });
-  }, 400);
-
-  // ============================================
-  // PRELOADER
+  // PRELOADER - Optimizado
   // ============================================
   const preloader = document.getElementById("preloader");
   if (preloader) {
+    // Usar tanto load como DOMContentLoaded para mayor rapidez
     const hidePreloader = () => {
       setTimeout(() => {
         preloader.classList.add("fade-out");
         setTimeout(() => {
           preloader.style.display = "none";
-          document.body.style.overflow = "";
-        }, 600);
-      }, 400);
+          document.body.style.overflow = ""; // Restaurar scroll
+        }, 400);
+      }, 300); // Reducido para mejor UX
     };
 
     if (document.readyState === "complete") {
@@ -599,10 +512,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ============================================
-  // HEADER SCROLL EFFECT
+  // HEADER SCROLL EFFECT - Optimizado con passive listener
   // ============================================
   const header = document.getElementById("header");
   if (header) {
+    let lastScroll = 0;
     let headerTicking = false;
 
     window.addEventListener(
@@ -610,11 +524,15 @@ document.addEventListener("DOMContentLoaded", () => {
       () => {
         if (!headerTicking) {
           requestAnimationFrame(() => {
-            if (window.pageYOffset > 80) {
-              header.classList.add("scrolled");
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+              header.classList.add("header-scrolled");
             } else {
-              header.classList.remove("scrolled");
+              header.classList.remove("header-scrolled");
             }
+
+            lastScroll = currentScroll;
             headerTicking = false;
           });
           headerTicking = true;
@@ -625,7 +543,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ============================================
-  // MOBILE MENU (Hamburger)
+  // MOBILE MENU
   // ============================================
   const menuBtn = document.getElementById("menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
@@ -635,24 +553,86 @@ document.addEventListener("DOMContentLoaded", () => {
 
     menuBtn.addEventListener("click", () => {
       menuOpen = !menuOpen;
-      menuBtn.classList.toggle("active", menuOpen);
       mobileMenu.classList.toggle("active", menuOpen);
+
+      // Animate hamburger icon
+      const lines = menuBtn.querySelectorAll(".menu-line");
+      if (menuOpen) {
+        lines[0].style.transform = "rotate(45deg) translate(4px, 4px)";
+        lines[1].style.opacity = "0";
+        lines[2].style.transform = "rotate(-45deg) translate(4px, -4px)";
+        lines[2].style.width = "100%";
+      } else {
+        lines[0].style.transform = "";
+        lines[1].style.opacity = "1";
+        lines[2].style.transform = "";
+        lines[2].style.width = "";
+      }
+
+      // Prevent body scroll when menu is open
       document.body.style.overflow = menuOpen ? "hidden" : "";
     });
 
-    // Close on link click
+    // Close menu when clicking on links
     mobileMenu.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         menuOpen = false;
-        menuBtn.classList.remove("active");
         mobileMenu.classList.remove("active");
         document.body.style.overflow = "";
+
+        const lines = menuBtn.querySelectorAll(".menu-line");
+        lines[0].style.transform = "";
+        lines[1].style.opacity = "1";
+        lines[2].style.transform = "";
+        lines[2].style.width = "";
       });
     });
   }
 
   // ============================================
-  // SCROLL PROGRESS BAR
+  // SCROLL REVEAL ANIMATIONS - Mejorado
+  // ============================================
+  const revealElements = document.querySelectorAll(
+    ".reveal, .reveal-left, .reveal-right, .reveal-scale",
+  );
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          // Only unobserve if not using repeat animations
+          if (!entry.target.hasAttribute("data-reveal-repeat")) {
+            revealObserver.unobserve(entry.target);
+          }
+        } else if (entry.target.hasAttribute("data-reveal-repeat")) {
+          entry.target.classList.remove("active");
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+      rootMargin: "0px 0px -80px 0px",
+    },
+  );
+
+  revealElements.forEach((el) => revealObserver.observe(el));
+
+  // ============================================
+  // MOUSE TRACKING GLOW EFFECT
+  // ============================================
+  document.querySelectorAll(".glow-hover").forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty("--mouse-x", `${x}%`);
+      card.style.setProperty("--mouse-y", `${y}%`);
+    });
+  });
+
+  // ============================================
+  // SMOOTH SCROLL PROGRESS INDICATOR
   // ============================================
   const progressBar = document.getElementById("scroll-progress");
   if (progressBar) {
@@ -670,106 +650,35 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ============================================
-  // SCROLL REVEAL ANIMATIONS
-  // ============================================
-  const revealElements = document.querySelectorAll(
-    ".reveal, .reveal-left, .reveal-right, .reveal-scale",
-  );
-
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active");
-          if (!entry.target.hasAttribute("data-reveal-repeat")) {
-            revealObserver.unobserve(entry.target);
-          }
-        } else if (entry.target.hasAttribute("data-reveal-repeat")) {
-          entry.target.classList.remove("active");
-        }
-      });
-    },
-    { threshold: 0.15, rootMargin: "0px 0px -80px 0px" },
-  );
-
-  revealElements.forEach((el) => revealObserver.observe(el));
-
-  // ============================================
-  // MOUSE TRACKING GLOW ON CARDS
-  // ============================================
-  document.querySelectorAll(".card, .problem-card").forEach((card) => {
-    card.addEventListener("mousemove", (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 100;
-      const y = ((e.clientY - rect.top) / rect.height) * 100;
-      card.style.setProperty("--mouse-x", `${x}%`);
-      card.style.setProperty("--mouse-y", `${y}%`);
-    });
-  });
-
-  // ============================================
-  // TILT CARD 3D EFFECT
-  // ============================================
-  document.querySelectorAll(".tilt-card").forEach((card) => {
-    card.addEventListener("mousemove", (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      const rotateX = (y - centerY) / 15;
-      const rotateY = (centerX - x) / 15;
-
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-    });
-
-    card.addEventListener("mouseleave", () => {
-      card.style.transform =
-        "perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)";
-    });
-  });
-
-  // ============================================
-  // MAGNETIC BUTTON EFFECT
-  // ============================================
-  document.querySelectorAll(".magnetic").forEach((btn) => {
-    btn.addEventListener("mousemove", (e) => {
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      btn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
-    });
-
-    btn.addEventListener("mouseleave", () => {
-      btn.style.transform = "translate(0, 0)";
-    });
-  });
-
-  // ============================================
-  // COUNTER ANIMATION
+  // COUNTER ANIMATION - Optimizado con easing
   // ============================================
   const counters = document.querySelectorAll(".counter");
+
   const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
 
   const animateCounter = (counter, target) => {
     const duration = 2500;
     const startTime = performance.now();
+    const startValue = 0;
 
-    const update = (currentTime) => {
+    const updateCounter = (currentTime) => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
       const easedProgress = easeOutQuart(progress);
-      const currentValue = Math.floor(target * easedProgress);
+      const currentValue = Math.floor(
+        startValue + (target - startValue) * easedProgress,
+      );
+
       counter.textContent = currentValue.toLocaleString();
 
       if (progress < 1) {
-        requestAnimationFrame(update);
+        requestAnimationFrame(updateCounter);
       } else {
         counter.textContent = target.toLocaleString();
       }
     };
 
-    requestAnimationFrame(update);
+    requestAnimationFrame(updateCounter);
   };
 
   const counterObserver = new IntersectionObserver(
@@ -778,6 +687,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (entry.isIntersecting) {
           const counter = entry.target;
           const target = parseInt(counter.getAttribute("data-target"));
+
           if (target && !counter.classList.contains("counted")) {
             counter.classList.add("counted");
             animateCounter(counter, target);
@@ -788,7 +698,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { threshold: 0.5 },
   );
 
-  counters.forEach((c) => counterObserver.observe(c));
+  counters.forEach((counter) => counterObserver.observe(counter));
 
   // ============================================
   // TESTIMONIALS SLIDER
@@ -799,23 +709,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     slider.innerHTML = testimonialsData
       .map(
-        (t) => `
-      <div class="testimonial-card flex-shrink-0 w-[320px] md:w-[400px] snap-start">
-        <div class="testimonial-stars">${"★"
-          .repeat(5)
-          .split("")
-          .map(() => "<span>★</span>")
-          .join("")}</div>
-        <p class="testimonial-text">"${currentLang === "en" ? t.text_en : t.text_es}"</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">${t.author.charAt(0)}</div>
-          <div>
-            <div class="testimonial-name">${t.author}</div>
-            <div class="testimonial-role">${t.role}</div>
-          </div>
-        </div>
-      </div>
-    `,
+        (t, i) => `
+            <div class="flex-shrink-0 w-[320px] md:w-[400px] snap-start bg-slate-800/50 border border-slate-700 rounded-2xl p-8 backdrop-blur-sm">
+                <div class="flex gap-1 mb-4">
+                    ${"★"
+                      .repeat(5)
+                      .split("")
+                      .map(() => '<span class="text-amber-400">★</span>')
+                      .join("")}
+                </div>
+                <p class="text-slate-300 mb-6 leading-relaxed">"${currentLang === "en" ? t.text_en : t.text_es}"</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold">
+                        ${t.author.charAt(0)}
+                    </div>
+                    <div>
+                        <div class="font-bold text-white">${t.author}</div>
+                        <div class="text-sm text-slate-400">${t.role}</div>
+                    </div>
+                </div>
+            </div>
+        `,
       )
       .join("");
   }
@@ -839,22 +753,27 @@ document.addEventListener("DOMContentLoaded", () => {
         const offsetPosition =
           elementPosition + window.pageYOffset - headerOffset;
 
-        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
       }
     });
   });
 
   // ============================================
-  // FORM HANDLING → WhatsApp
+  // FORM HANDLING
   // ============================================
   const contactForm = document.getElementById("contact-form");
   if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
+      // Get form data
       const formData = new FormData(this);
       const data = Object.fromEntries(formData);
 
+      // Create WhatsApp message
       const message = `Hola! Me interesa el servicio de ${data.service}.
 
 *Nombre:* ${data.name}
@@ -864,14 +783,17 @@ document.addEventListener("DOMContentLoaded", () => {
 *Mensaje:*
 ${data.message || "Me gustaría más información"}`;
 
+      // Encode and open WhatsApp
       const encodedMsg = encodeURIComponent(message);
       window.open(`https://wa.me/573044301112?text=${encodedMsg}`, "_blank");
+
+      // Reset form
       this.reset();
     });
   }
 
   // ============================================
-  // FAQ ACCORDION (for faq.html)
+  // FAQ ACCORDION
   // ============================================
   document.querySelectorAll(".accordion-btn").forEach((btn) => {
     btn.addEventListener("click", function () {
@@ -880,6 +802,7 @@ ${data.message || "Me gustaría más información"}`;
       const isOpen =
         content.style.maxHeight && content.style.maxHeight !== "0px";
 
+      // Close all others
       document.querySelectorAll(".accordion-content").forEach((c) => {
         c.style.maxHeight = "0px";
       });
@@ -887,6 +810,7 @@ ${data.message || "Me gustaría más información"}`;
         i.textContent = "+";
       });
 
+      // Toggle current
       if (!isOpen) {
         content.style.maxHeight = content.scrollHeight + "px";
         if (icon) icon.textContent = "−";
@@ -895,12 +819,13 @@ ${data.message || "Me gustaría más información"}`;
   });
 
   // ============================================
-  // PORTFOLIO FILTER (for portfolio.html)
+  // PORTFOLIO FILTER
   // ============================================
   document.querySelectorAll(".filter-btn").forEach((btn) => {
     btn.addEventListener("click", function () {
       const filter = this.dataset.filter;
 
+      // Update button styles
       document.querySelectorAll(".filter-btn").forEach((b) => {
         b.classList.remove("bg-indigo-500", "text-white");
         b.classList.add("bg-slate-800", "text-slate-300");
@@ -908,6 +833,7 @@ ${data.message || "Me gustaría más información"}`;
       this.classList.add("bg-indigo-500", "text-white");
       this.classList.remove("bg-slate-800", "text-slate-300");
 
+      // Filter projects
       document.querySelectorAll(".project-item").forEach((item) => {
         if (filter === "all" || item.dataset.category === filter) {
           item.style.display = "";
@@ -920,24 +846,40 @@ ${data.message || "Me gustaría más información"}`;
   });
 
   // ============================================
-  // PARALLAX ELEMENTS
+  // PARALLAX ON SCROLL - Optimizado con RAF throttle
   // ============================================
   let ticking = false;
+  let lastScrollY = 0;
+
+  const updateParallax = () => {
+    const scrolled = lastScrollY;
+
+    // Hero parallax elements
+    document.querySelectorAll(".blob").forEach((blob, i) => {
+      const speed = i === 0 ? 0.15 : 0.1;
+      blob.style.transform = `translateY(${scrolled * speed}px)`;
+    });
+
+    // Hero floating images parallax
+    document.querySelectorAll(".floating-img").forEach((img, i) => {
+      const speed = 0.05 + i * 0.02;
+      const baseTransform = img.style.animation
+        ? ""
+        : `translateY(${scrolled * speed}px)`;
+      if (!img.style.animation) {
+        img.style.transform = baseTransform;
+      }
+    });
+
+    ticking = false;
+  };
 
   window.addEventListener(
     "scroll",
     () => {
+      lastScrollY = window.pageYOffset;
       if (!ticking) {
-        requestAnimationFrame(() => {
-          const scrolled = window.pageYOffset;
-
-          document.querySelectorAll(".floating-tag").forEach((tag, i) => {
-            const speed = 0.03 + i * 0.015;
-            tag.style.transform = `translateY(${scrolled * speed}px)`;
-          });
-
-          ticking = false;
-        });
+        requestAnimationFrame(updateParallax);
         ticking = true;
       }
     },
@@ -945,7 +887,47 @@ ${data.message || "Me gustaría más información"}`;
   );
 
   // ============================================
-  // LAZY LOADING IMAGES
+  // MAGNETIC BUTTON EFFECT
+  // ============================================
+  document.querySelectorAll(".magnetic-btn").forEach((btn) => {
+    btn.addEventListener("mousemove", (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+
+      btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+    });
+
+    btn.addEventListener("mouseleave", () => {
+      btn.style.transform = "translate(0, 0)";
+    });
+  });
+
+  // ============================================
+  // TILT EFFECT FOR CARDS
+  // ============================================
+  document.querySelectorAll(".card-3d").forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = (y - centerY) / 20;
+      const rotateY = (centerX - x) / 20;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform =
+        "perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)";
+    });
+  });
+
+  // ============================================
+  // LAZY LOADING IMAGES - Mejorado con fade-in
   // ============================================
   if ("IntersectionObserver" in window) {
     const imageObserver = new IntersectionObserver(
@@ -954,6 +936,7 @@ ${data.message || "Me gustaría más información"}`;
           if (entry.isIntersecting) {
             const img = entry.target;
             if (img.dataset.src) {
+              // Añadir fade-in al cargar
               img.style.opacity = "0";
               img.style.transition = "opacity 0.4s ease";
               img.src = img.dataset.src;
@@ -966,7 +949,10 @@ ${data.message || "Me gustaría más información"}`;
           }
         });
       },
-      { rootMargin: "100px 0px", threshold: 0.01 },
+      {
+        rootMargin: "100px 0px", // Cargar imágenes 100px antes de entrar en viewport
+        threshold: 0.01,
+      },
     );
 
     document.querySelectorAll("img[data-src]").forEach((img) => {
@@ -975,22 +961,41 @@ ${data.message || "Me gustaría más información"}`;
   }
 
   // ============================================
-  // REDUCED MOTION SUPPORT
+  // PERFORMANCE: Reduce motion for users who prefer it
   // ============================================
   const prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)",
   );
+
   if (prefersReducedMotion.matches) {
     document.documentElement.style.setProperty(
       "--animation-duration",
       "0.01ms",
     );
     document
-      .querySelectorAll(".gradient-text-animated, .floating-tag")
+      .querySelectorAll(
+        ".blob, .float, .animate-bounce, .pulse-glow, .shimmer, .gradient-text-animated",
+      )
       .forEach((el) => {
         el.style.animation = "none";
       });
-    // Immediately reveal hero lines
-    heroLines.forEach((line) => line.classList.add("visible"));
+  }
+
+  // ============================================
+  // TYPING EFFECT FOR HERO (Optional enhancement)
+  // ============================================
+  const typingElement = document.querySelector(".typing-effect");
+  if (typingElement) {
+    const text = typingElement.textContent;
+    typingElement.textContent = "";
+    let i = 0;
+    const typeWriter = () => {
+      if (i < text.length) {
+        typingElement.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 50);
+      }
+    };
+    setTimeout(typeWriter, 1000);
   }
 });
